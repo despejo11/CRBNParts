@@ -1,0 +1,15 @@
+@import '/index.scss';
+
+.toggle {
+  @include round-btn($gray, $white, 20px, 7px);
+  @include hover-btn($gray-h);
+  @include active-btn($gray-a);
+  @include media-btn($gray);
+
+  &.dark {
+    @include round-btn($white, $gray, 20px, 7px);
+    @include hover-btn($white-h);
+    @include active-btn($white-a);
+    @include media-btn($white);
+  }
+}

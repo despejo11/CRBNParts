@@ -1,0 +1,105 @@
+@import '/index.scss';
+
+.icon {
+  @include round-btn($gray, $white, 35px, 7px);
+  @include hover-btn($gray-h);
+  @include active-btn($gray-a);
+  @include media-btn($gray);
+  z-index: 1;
+}
+
+.darkIcon {
+  @include round-btn($white, $gray, 35px, 7px);
+  @include hover-btn($white-h);
+  @include active-btn($white-a);
+  @include media-btn($white);
+}
+
+.menu {
+  overflow: auto;
+  display: none;
+  background: linear-gradient(-45deg, $white, $white-h);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  &::after {
+    background-image: url(../../../../app/assets/images/Header-bg.png);
+    background-size: cover;
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: 0;
+    bottom: 0;
+    left: -360px;
+    z-index: -1;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    gap: 16px;
+    background-color: #e7e7e75f;
+    padding-inline: 40px;
+    padding-block: 20px;
+    border-radius: 20px;
+    box-shadow: $b-sh;
+    width: 280px;
+
+    a {
+      font-size: 30px;
+      text-decoration: none;
+      position: relative;
+      color: $gray;
+    }
+  }
+
+  .darkLinks {
+    background-color: #a4a4a45f;
+
+    a {
+      color: $white;
+    }
+  }
+
+  .contact {
+    display: flex;
+    margin-bottom: 50px;
+    margin-left: 15px;
+    padding-inline: 40px;
+    padding-block: 20px;
+    font-size: 30px;
+    gap: 25px;
+    background-color: #e7e7e75f;
+    border-radius: 20px;
+    box-shadow: $b-sh;
+    width: 280px;
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $gray;
+      cursor: pointer;
+    }
+  }
+
+  .darkContact {
+    background-color: #a4a4a45f;
+
+    &__icon {
+      color: $white;
+      cursor: pointer;
+    }
+  }
+}
+
+.darkMenu {
+  background: linear-gradient(-45deg, $gray, $gray-h);
+}

@@ -1,0 +1,9 @@
+%round-btn {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: $b-sh;
+  transition: $tr-btn;
+}

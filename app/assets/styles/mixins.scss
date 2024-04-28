@@ -1,0 +1,31 @@
+@mixin round-btn($bg-color, $color, $font-size, $padding) {
+  @extend %round-btn;
+  background-color: #{$bg-color};
+  color: #{$color};
+  font-size: #{$font-size};
+  padding: #{$padding};
+}
+
+@mixin hover-btn($bg-color, $color: null) {
+  &:hover {
+    background-color: #{$bg-color};
+    color: #{$color};
+  }
+}
+
+@mixin active-btn($bg-color, $color: null) {
+  &:active {
+    background-color: #{$bg-color};
+    color: #{$color};
+  }
+}
+
+@mixin media-btn($bg-color, $color: null) {
+  @media (max-width: 1000px) {
+    &:hover,
+    &:active {
+      background-color: #{$bg-color};
+      color: #{$color};
+    }
+  }
+}

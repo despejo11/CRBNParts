@@ -1,0 +1,25 @@
+@import '/index.scss';
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  margin-top: 100px;
+  position: relative;
+  color: $gray;
+
+  .number {
+    font-size: 14vw;
+  }
+
+  .message {
+    font-size: 23px;
+    margin-top: 20px;
+  }
+}
+
+.darkError {
+  color: $white;
+}

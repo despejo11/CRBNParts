@@ -5,7 +5,7 @@
   @include hover-btn($gray-h);
   @include active-btn($gray-a);
   @include media-btn($gray);
-  z-index: 1;
+  z-index: 3;
 }
 
 .darkIcon {
@@ -24,12 +24,13 @@
   left: 0;
   height: 100%;
   width: 100%;
+  z-index: 2;
 
   &::after {
-    background-image: url(../../../../app/assets/images/Header-bg.png);
+    background-image: url(/Header&Menu-bg.png);
     background-size: cover;
     content: '';
-    position: absolute;
+    position: fixed;
     top: 30px;
     right: 0;
     bottom: 0;
@@ -85,7 +86,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: $gray;
+      color: $violet;
+      filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
       cursor: pointer;
     }
   }
@@ -94,8 +96,7 @@
     background-color: #a4a4a45f;
 
     &__icon {
-      color: $white;
-      cursor: pointer;
+      color: $violet-a;
     }
   }
 }

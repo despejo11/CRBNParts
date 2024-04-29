@@ -24,11 +24,7 @@ export default function Header() {
             <Menu />
           </div>
           <Link to='/'>
-            <img
-              className={styles.logo}
-              src='../../../app/assets/images/Logo.png'
-              alt='logo'
-            />
+            <img className={styles.logo} src='/Logo.png' alt='logo' />
           </Link>
           <div
             className={`${styles.links} ${

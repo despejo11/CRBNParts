@@ -16,6 +16,7 @@ gsap.registerPlugin(useGSAP)
 export default function Menu() {
   const [theme] = useContext(ThemeContext)
   const menuRef = useRef(null)
+
   const [isOpen, setIsOpen] = useState(false)
 
   const handleToggle = () => {

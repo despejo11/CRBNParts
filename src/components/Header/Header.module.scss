@@ -4,6 +4,7 @@
   padding-block: 15px;
   background: linear-gradient(20deg, $white, $white-h);
   border-bottom: 3px solid $white;
+  box-shadow: $b-sh;
 
   .menu {
     display: none;
@@ -16,7 +17,7 @@
     position: relative;
 
     &::after {
-      background-image: url(../../../../app/assets/images/Header-bg.png);
+      background-image: url(/Header&Menu-bg.png);
       background-size: cover;
       content: '';
       position: absolute;
@@ -30,7 +31,7 @@
     }
 
     a {
-      z-index: 1;
+      z-index: 3;
 
       .logo {
         width: 90px;
@@ -104,7 +105,7 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
-      z-index: 1;
+      z-index: 3;
 
       .sign {
         @include round-btn($blue, $white-a, 25px, 9px);

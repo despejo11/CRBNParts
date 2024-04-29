@@ -1,5 +1,5 @@
 body {
-  background-color: $bg;
+  background: $bg;
   font-family: 'Russo One', sans-serif;
 
   ::selection {
@@ -8,7 +8,11 @@ body {
   }
 
   &.dark {
-    background-color: $bg-dark;
+    background: $bg-dark;
+
+    .screen-width-warning {
+      color: $white;
+    }
 
     ::selection {
       background-color: $white;
@@ -26,6 +30,29 @@ body {
     display: block;
     width: 100%;
   }
+
+  .screen-width-warning {
+    display: none;
+  }
+
+  @media (max-width: 319.9px) {
+    .screen-width-warning {
+      display: block;
+      padding-inline: 15px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: $gray;
+      font-size: 20px;
+      text-wrap: balance;
+    }
+
+    .screen-content {
+      display: none;
+    }
+  }
 }
 
 * {
@@ -42,9 +69,9 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgba(180, 180, 180, 0.4);
+  background-color: rgb(160, 160, 160, 0.8);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(150, 150, 150, 0.5);
+  background-color: rgba(110, 110, 110, 0.7);
 }

@@ -1,0 +1,75 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      margin-bottom: 30px;
+      font-size: 80px;
+      color: $gray;
+    }
+
+    .description {
+      color: $gray-h;
+      font-size: 17px;
+      text-wrap: balance;
+    }
+
+    .button {
+      width: 200px;
+      margin-top: 20px;
+      @include regular-btn($violet, $white-a, 20px, 20px, 12px);
+      @include hover-btn($violet-h);
+      @include active-btn($violet-a);
+      @include media-btn($violet);
+    }
+  }
+
+  &__darkText {
+    .title {
+      color: $white-h;
+    }
+
+    .description {
+      color: $white;
+    }
+  }
+
+  .image {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .content {
+    flex-direction: column;
+    gap: 100px;
+
+    &__text {
+      text-align: center;
+      align-items: center;
+
+      .title {
+        font-size: 10vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    &__text {
+      .description {
+        font-size: 15px;
+      }
+    }
+  }
+}

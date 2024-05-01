@@ -6,6 +6,15 @@
   padding: #{$padding};
 }
 
+@mixin regular-btn($bg-color, $color, $font-size, $padding-i, $padding-b) {
+  @extend %regular-btn;
+  background-color: #{$bg-color};
+  color: #{$color};
+  font-size: #{$font-size};
+  padding-inline: #{$padding-i};
+  padding-block: #{$padding-b};
+}
+
 @mixin hover-btn($bg-color, $color: null) {
   &:hover {
     background-color: #{$bg-color};

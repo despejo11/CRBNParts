@@ -8,7 +8,7 @@ import { BsMoonStars, BsSun } from 'react-icons/bs'
 export default function ThemeToggle() {
   const [theme, setTheme] = useContext(ThemeContext)
 
-  function changeTheme() {
+  const changeTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
   }
 

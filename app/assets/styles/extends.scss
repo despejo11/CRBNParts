@@ -7,3 +7,11 @@
   box-shadow: $b-sh;
   transition: $tr-btn;
 }
+
+%regular-btn {
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: $b-sh;
+  transition: $tr-btn;
+  font-family: 'Russo One', sans-serif;
+}

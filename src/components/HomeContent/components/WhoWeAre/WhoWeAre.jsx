@@ -1,0 +1,33 @@
+import styles from './WhoWeAre.module.scss'
+
+import { ThemeContext } from '../../../../../app/providers/ThemeProvider'
+import { useContext } from 'react'
+
+export default function WhoWeAre() {
+  const [theme] = useContext(ThemeContext)
+
+  return (
+    <div className='container'>
+      <div className={styles.content}>
+        <div
+          className={`${styles.content__text} ${
+            theme === 'dark' ? styles.content__darkText : ''
+          }`}
+        >
+          <p className={styles.title}>Who we are?</p>
+          <p className={styles.description}>
+            Looking for carbon fiber car parts for your vehicle? You've come to
+            the right place! We offer a variety of options including bumpers,
+            splitters, hoods, and more.
+          </p>
+          <button className={styles.button}>Learn More</button>
+        </div>
+        <img
+          className={styles.image}
+          src='/HomeContent.png'
+          alt='Carbon Fiber Figure'
+        />
+      </div>
+    </div>
+  )
+}

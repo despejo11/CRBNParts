@@ -1,0 +1,168 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 150px;
+  text-align: center;
+
+  .text {
+    .title {
+      font-size: 80px;
+      color: $gray;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      color: $gray-h;
+      font-size: 35px;
+    }
+
+    .buttons {
+      margin-top: 50px;
+      margin-bottom: 100px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        @include regular-btn(transparent, $blue, 17px, 15px, 5px);
+        @include hover-btn(transparent, $blue-h);
+        @include active-btn(transparent, $blue-a);
+        @include media-btn(transparent, $blue);
+        box-shadow: none;
+        letter-spacing: 2.2px;
+      }
+
+      .activeButton {
+        @include regular-btn($blue, $white-a, 17px, 15px, 5px);
+        @include hover-btn($blue, $white-a);
+        @include active-btn($blue, $white-a);
+        @include media-btn($blue, $white-a);
+      }
+
+      p {
+        color: $gray;
+      }
+    }
+
+    .darkButtons {
+      button {
+        @include regular-btn(transparent, $blue-a, 17px, 15px, 5px);
+        @include hover-btn(transparent, $blue-h);
+        @include active-btn(transparent, $blue);
+        @include media-btn(transparent, $blue);
+      }
+
+      .activeButton {
+        @include regular-btn($blue-h, $white-a, 17px, 15px, 5px);
+        @include hover-btn($blue-h, $white-a);
+        @include active-btn($blue-h, $white-a);
+        @include media-btn($blue-h, $white-a);
+      }
+
+      p {
+        color: $white;
+      }
+    }
+  }
+
+  .darkText {
+    .title {
+      color: $white-h;
+    }
+
+    .description {
+      color: $white;
+    }
+  }
+
+  .selected {
+    .loading {
+      height: 355px;
+    }
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 90px;
+
+      div {
+        height: 355px;
+      }
+
+      .dark {
+        p {
+          margin-top: 30px;
+          font-size: 22px;
+          color: $white-h;
+        }
+
+        .model {
+          color: $white;
+          font-size: 12px;
+        }
+      }
+
+      img {
+        width: 245px;
+        object-fit: cover;
+        height: 245px;
+        box-shadow: $b-sh;
+      }
+
+      .image1br {
+        border-radius: 62% 38% 63% 37% / 39% 62% 38% 61%;
+      }
+
+      .image2br {
+        border-radius: 31% 69% 30% 70% / 39% 32% 68% 61%;
+      }
+
+      .image3br {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      }
+
+      p {
+        margin-top: 30px;
+        font-size: 22px;
+        color: $gray;
+      }
+
+      .model {
+        color: $gray-h;
+        font-size: 12px;
+      }
+
+      button {
+        margin-top: 20px;
+        @include regular-btn($violet, $white-a, 13px, 20px, 10px);
+        @include hover-btn($violet-h);
+        @include active-btn($violet-a);
+        @include media-btn($violet);
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .content {
+    .text {
+      .title {
+        font-size: 10vw;
+      }
+
+      .description {
+        font-size: 25px;
+      }
+
+      .buttons {
+        p {
+          display: none;
+        }
+      }
+    }
+  }
+}

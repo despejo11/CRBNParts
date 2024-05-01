@@ -1,0 +1,53 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 150px;
+  text-align: center;
+
+  .title {
+    margin-bottom: 30px;
+    font-size: 80px;
+    color: $gray;
+  }
+
+  .description {
+    color: $gray-h;
+    font-size: 17px;
+    text-wrap: balance;
+  }
+
+  button {
+    width: 160px;
+    margin-top: 20px;
+    @include regular-btn($violet, $white-a, 17px, 20px, 10px);
+    @include hover-btn($violet-h);
+    @include active-btn($violet-a);
+    @include media-btn($violet);
+  }
+}
+
+.darkContent {
+  .title {
+    margin-bottom: 30px;
+    font-size: 80px;
+    color: $white-h;
+  }
+
+  .description {
+    color: $white;
+    font-size: 17px;
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 700px) {
+  .content {
+    .title {
+      font-size: 10vw;
+    }
+
+    .description {
+      font-size: 15px;
+    }
+  }
+}

@@ -25,8 +25,8 @@
   }
 
   .text {
-    background-color: #a4a4a45f;
-    padding-inline: 37px;
+    background-color: $bg-card-d;
+    padding-inline: 35px;
     padding-block: 20px;
     border-radius: 10px;
     box-shadow: $b-sh;
@@ -42,7 +42,7 @@
       text-wrap: balance;
     }
 
-    .warning {
+    .notification {
       font-size: 13px;
       margin-top: 10px;
       color: $white;
@@ -64,7 +64,7 @@
   background: linear-gradient(20deg, $white, $white-h);
 
   .text {
-    background-color: #e7e7e75f;
+    background-color: $bg-card-l;
 
     ::selection {
       background-color: $gray;
@@ -75,7 +75,7 @@
       color: $gray;
     }
 
-    .warning {
+    .notification {
       color: $gray-h;
     }
   }
@@ -91,7 +91,7 @@
         font-size: 21px;
       }
 
-      .warning {
+      .notification {
         text-align: left;
         font-size: 12px;
       }

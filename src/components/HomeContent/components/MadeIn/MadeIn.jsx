@@ -16,7 +16,7 @@ export default function MadeIn() {
         <p className={styles.title}>Made in Spain</p>
         <p className={styles.description}>
           One of the things that we’re most proud of is that back in 2021 we
-          became “Made In Spain” Approved for the parts we produce and sell.
+          became “Made in Spain” Approved for the parts we produce and sell.
         </p>
         <br />
         <p className={styles.description}>

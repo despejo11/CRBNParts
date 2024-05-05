@@ -1,7 +1,7 @@
 @import '/index.scss';
 
 .icon {
-  @include round-btn($gray, $white, 35px, 7px);
+  @include round-btn($gray, $white, 35px, 8px);
   @include hover-btn($gray-h);
   @include active-btn($gray-a);
   @include media-btn($gray);
@@ -9,7 +9,7 @@
 }
 
 .darkIcon {
-  @include round-btn($white, $gray, 35px, 7px);
+  @include round-btn($white, $gray, 35px, 8px);
   @include hover-btn($white-h);
   @include active-btn($white-a);
   @include media-btn($white);
@@ -47,7 +47,7 @@
     margin-bottom: 20px;
     margin-left: 15px;
     gap: 16px;
-    background-color: #e7e7e75f;
+    background-color: $bg-card-l;
     padding-inline: 40px;
     padding-block: 20px;
     border-radius: 20px;
@@ -63,7 +63,7 @@
   }
 
   .darkLinks {
-    background-color: #a4a4a45f;
+    background-color: $bg-card-d;
 
     a {
       color: $white;
@@ -78,7 +78,7 @@
     padding-block: 20px;
     font-size: 30px;
     gap: 25px;
-    background-color: #e7e7e75f;
+    background-color: $bg-card-l;
     border-radius: 20px;
     box-shadow: $b-sh;
     width: 280px;
@@ -94,7 +94,7 @@
   }
 
   .darkContact {
-    background-color: #a4a4a45f;
+    background-color: $bg-card-d;
 
     &__icon {
       color: $violet-a;

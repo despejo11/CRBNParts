@@ -24,7 +24,7 @@ export default function Header() {
             <Menu />
           </div>
           <Link to='/'>
-            <img className={styles.logo} src='/Logo.png' alt='logo' />
+            <img className={styles.logo} src='/Logo.png' alt='Logo' />
           </Link>
           <div
             className={`${styles.links} ${
@@ -35,7 +35,7 @@ export default function Header() {
             <Link to='/parts'>Parts</Link>
             <Link to='/about'>About</Link>
             <Link to='/testimonials'>Testimonials</Link>
-            <Link to='/team'>Our Team</Link>
+            <Link to='/team'>Team</Link>
             <Link to='/contact'>Contact</Link>
           </div>
           <div className={styles.buttons}>

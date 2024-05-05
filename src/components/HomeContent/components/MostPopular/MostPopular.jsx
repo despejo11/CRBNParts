@@ -4,13 +4,14 @@ import { ThemeContext } from '../../../../../app/providers/ThemeProvider'
 import { useContext } from 'react'
 import { useState } from 'react'
 
-import 'ldrs/quantum'
+import { quantum } from 'ldrs'
+quantum.register()
 
 export default function MostPopular() {
+  const [theme] = useContext(ThemeContext)
+
   const [activeButton, setActiveButton] = useState('Ferrari')
   const [loading, setLoading] = useState(false)
-
-  const [theme] = useContext(ThemeContext)
 
   const handleOption = (buttonName) => {
     if (buttonName !== activeButton) {

@@ -1,0 +1,476 @@
+@import '/index.scss';
+
+footer {
+  margin-top: 200px;
+  padding-block: 50px;
+  background: linear-gradient(20deg, $white, $white-h);
+  border-top: 3px solid $white;
+  box-shadow: $b-sh;
+  position: relative;
+
+  &::after {
+    background-image: url(/FooterBg.png);
+    background-size: cover;
+    content: '';
+    position: absolute;
+    top: 450px;
+    right: 0;
+    bottom: 0;
+    left: 550px;
+    max-width: 550px;
+    margin: auto;
+    z-index: 0;
+  }
+
+  .subscribe {
+    @include footer-card($bg-card-l);
+    display: flex;
+    gap: 30px;
+    margin-bottom: 100px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      p {
+        font-size: 26px;
+        color: $gray;
+        text-wrap: balance;
+      }
+
+      .notification {
+        font-size: 16px;
+        margin-top: 10px;
+        color: $gray-h;
+        text-wrap: balance;
+      }
+    }
+
+    form {
+      .submitSuccessfulInput {
+        opacity: 0.5;
+      }
+
+      input {
+        width: 300px;
+        @include input(
+          $white-h,
+          $gray,
+          $white,
+          17px,
+          20px,
+          10px,
+          $gray,
+          #9f9f9f
+        );
+      }
+
+      div {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+
+        button {
+          width: 160px;
+          height: 40px;
+          @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+          @include hover-btn($blue-h);
+          @include active-btn($blue-a);
+          @include media-btn($blue);
+        }
+
+        .submitSuccessfulBtn {
+          cursor: auto;
+          opacity: 0.5;
+          @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+          @include hover-btn($blue);
+          @include active-btn($blue);
+          @include media-btn($blue);
+        }
+
+        p {
+          display: flex;
+          align-items: center;
+          color: $red-a;
+          gap: 4px;
+          font-size: 14px;
+
+          svg {
+            font-size: 20px;
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+
+  .popupTitle {
+    font-size: 35px;
+    color: $gray;
+  }
+
+  .darkPopupTitle {
+    color: $white-h;
+  }
+
+  .popupDescription {
+    font-size: 15px;
+    color: $gray-h;
+    text-wrap: balance;
+  }
+
+  .darkPopupDescription {
+    color: $white;
+  }
+
+  .darkSubscribe {
+    @include footer-card($bg-card-d);
+
+    div {
+      p {
+        color: $white-h;
+      }
+
+      .notification {
+        color: $white;
+      }
+    }
+
+    form {
+      input {
+        @include input(
+          $white-h-alt,
+          $gray,
+          $white-a-alt,
+          17px,
+          20px,
+          10px,
+          $white-h,
+          #828282
+        );
+      }
+
+      div {
+        p {
+          color: $red;
+
+          svg {
+            color: $red-h;
+          }
+        }
+      }
+    }
+  }
+
+  .columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .title {
+      font-size: 27px;
+      color: $gray;
+      margin-bottom: 25px;
+    }
+
+    &__contentCRBNParts {
+      @include footer-card($bg-card-l);
+      display: flex;
+      flex-direction: column;
+      width: 280px;
+      z-index: 1;
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        a {
+          font-size: 15px;
+          text-decoration: none;
+          color: $blue;
+          transition: $tr-btn;
+          @include hover-btn(transparent, $blue-h);
+          @include active-btn(transparent, $blue-a);
+          @include media-btn(transparent, $blue);
+        }
+
+        p {
+          color: $gray-h;
+          margin-top: 10px;
+          font-size: 13px;
+        }
+      }
+
+      .icons {
+        display: flex;
+        gap: 15px;
+        filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+        margin-top: 25px;
+
+        svg {
+          color: $violet;
+          cursor: pointer;
+          font-size: 22px;
+          transition: $tr-btn;
+          @include hover-btn(transparent, $violet-h);
+          @include active-btn(transparent, $violet-a);
+          @include media-btn(transparent, $violet);
+        }
+      }
+    }
+
+    &__darkContentCRBNParts {
+      @include footer-card($bg-card-d);
+
+      .links {
+        a {
+          color: $blue-a;
+          @include hover-btn(transparent, $blue-h);
+          @include active-btn(transparent, $blue);
+          @include media-btn(transparent, $blue-a);
+        }
+
+        p {
+          color: $white;
+        }
+      }
+
+      .icons {
+        svg {
+          color: $violet-a;
+          @include hover-btn(transparent, $violet-h);
+          @include active-btn(transparent, $violet);
+          @include media-btn(transparent, $violet-a);
+        }
+      }
+    }
+
+    &__contentCompany {
+      @include footer-card($bg-card-l);
+      width: 280px;
+      z-index: 1;
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        a {
+          font-size: 20px;
+          text-decoration: none;
+          position: relative;
+          transition: $tr-btn;
+          color: $gray-h;
+          @include hover-btn(transparent, $gray-a);
+          @include active-btn(transparent, $gray-a-alt);
+          @include media-btn(transparent, $gray-h);
+
+          &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 0;
+            bottom: 0;
+            left: 0;
+            background-color: $gray-h;
+            transition: $tr-btn;
+          }
+
+          &:hover::after {
+            width: 40px;
+          }
+        }
+      }
+
+      @media (max-width: 1000px) {
+        a {
+          &::after {
+            display: none;
+          }
+
+          &:hover::after {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &__darkContentCompany {
+      @include footer-card($bg-card-d);
+
+      .links {
+        a {
+          color: $white;
+          @include hover-btn(transparent, $white-h-alt);
+          @include active-btn(transparent, $white-a-alt);
+          @include media-btn(transparent, $white);
+
+          &::after {
+            background-color: $white;
+          }
+        }
+      }
+    }
+
+    &__contentWorkingHours {
+      @include footer-card($bg-card-l);
+      width: 280px;
+      z-index: 1;
+
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: $gray-h;
+        font-size: 15px;
+      }
+    }
+
+    &__darkContentWorkingHours {
+      @include footer-card($bg-card-d);
+
+      .text {
+        color: $white;
+      }
+    }
+  }
+
+  .darkColumns {
+    .title {
+      color: $white-h;
+    }
+  }
+
+  .disclaimer {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .content {
+      max-width: 560px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      img {
+        width: 65px;
+      }
+
+      .description {
+        font-size: 16px;
+        text-wrap: balance;
+        color: $gray;
+      }
+
+      .reserved {
+        margin-top: 15px;
+        font-size: 13px;
+        text-wrap: balance;
+        color: $gray-h;
+      }
+    }
+
+    button {
+      @include round-btn($gray, $white, 25px, 8px);
+      @include hover-btn($gray-h);
+      @include active-btn($gray-a);
+      @include media-btn($gray);
+      z-index: 1;
+    }
+
+    .darkButton {
+      @include round-btn($white, $gray, 25px, 8px);
+      @include hover-btn($white-h);
+      @include active-btn($white-a);
+      @include media-btn($white);
+    }
+
+    .darkContent {
+      .description {
+        color: $white-h;
+      }
+
+      .reserved {
+        color: $white;
+      }
+    }
+  }
+}
+
+.darkFooter {
+  background: linear-gradient(20deg, $gray, $gray-h);
+  border-top: 3px solid $gray;
+}
+
+@media (max-width: 1100px) {
+  footer {
+    &::after {
+      display: none;
+    }
+
+    .subscribe {
+      flex-wrap: wrap;
+    }
+
+    .columns {
+      gap: 50px;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  footer {
+    .disclaimer {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 70px;
+
+      .content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  footer {
+    .subscribe {
+      div {
+        p {
+          font-size: 21px;
+        }
+
+        .notification {
+          font-size: 13px;
+        }
+      }
+
+      form {
+        input {
+          width: 210px;
+        }
+
+        div {
+          button {
+            width: 110px;
+          }
+        }
+      }
+    }
+
+    .popupTitle {
+      font-size: 30px;
+    }
+
+    .popupDescription {
+      font-size: 13px;
+    }
+  }
+}

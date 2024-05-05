@@ -15,22 +15,21 @@ gsap.registerPlugin(useGSAP)
 
 export default function Menu() {
   const [theme] = useContext(ThemeContext)
-  const menuRef = useRef(null)
 
   const [isOpen, setIsOpen] = useState(false)
+
+  const menu = useRef(null)
 
   const handleToggle = () => {
     setIsOpen((prevState) => !prevState)
   }
 
   useGSAP(() => {
-    const menu = menuRef.current
-
     if (isOpen) {
-      gsap.to(menu, { opacity: 1, duration: 0.3, display: 'block' })
+      gsap.to(menu.current, { opacity: 1, duration: 0.3, display: 'block' })
       document.documentElement.style.overflow = 'hidden'
     } else {
-      gsap.to(menu, { opacity: 0, duration: 0.3, display: 'none' })
+      gsap.to(menu.current, { opacity: 0, duration: 0.3, display: 'none' })
       document.documentElement.style.overflow = 'auto'
     }
   }, [isOpen])
@@ -45,7 +44,7 @@ export default function Menu() {
       </button>
 
       <div
-        ref={menuRef}
+        ref={menu}
         className={`${styles.menu} ${theme === 'dark' ? styles.darkMenu : ''}`}
       >
         <div
@@ -57,7 +56,7 @@ export default function Menu() {
           <Link to='/parts'>Parts</Link>
           <Link to='/about'>About</Link>
           <Link to='/testimonials'>Testimonials</Link>
-          <Link to='/team'>Our Team</Link>
+          <Link to='/team'>Team</Link>
           <Link to='/contact'>Contact</Link>
         </div>
         <div

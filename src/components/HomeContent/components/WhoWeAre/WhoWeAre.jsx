@@ -20,7 +20,7 @@ export default function WhoWeAre() {
             the right place! We offer a variety of options including bumpers,
             splitters, hoods, and more.
           </p>
-          <button className={styles.button}>Learn More</button>
+          <button>Learn More</button>
         </div>
         <img
           className={styles.image}

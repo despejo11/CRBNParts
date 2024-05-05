@@ -15,3 +15,16 @@
   transition: $tr-btn;
   font-family: 'Russo One', sans-serif;
 }
+
+%input {
+  border-radius: 10px;
+  transition: $tr-btn;
+  font-family: 'Russo One', sans-serif;
+}
+
+%footer-card {
+  padding-inline: 35px;
+  padding-block: 20px;
+  border-radius: 20px;
+  box-shadow: $b-sh;
+}

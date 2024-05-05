@@ -51,7 +51,7 @@
         @include regular-btn(transparent, $blue-a, 17px, 15px, 5px);
         @include hover-btn(transparent, $blue-h);
         @include active-btn(transparent, $blue);
-        @include media-btn(transparent, $blue);
+        @include media-btn(transparent, $blue-a);
       }
 
       .activeButton {

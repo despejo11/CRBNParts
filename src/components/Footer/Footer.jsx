@@ -1,6 +1,7 @@
 import styles from './Footer.module.scss'
 import PopupSubscribe from './components/PopupSubscribe/PopupSubscribe'
 import useLocalStorage from '../../../app/hooks/useLocalStorage'
+import ThemeToggle from '../../../app/theme/ThemeToggle'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 
 import { Link } from 'react-router-dom'
@@ -23,8 +24,8 @@ export default function Footer() {
 
   const [openPopup, setOpenPopup] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [userEmail, setUserEmail] = useLocalStorage('subscribeEmail', '')
-  const [formSubmitted, setFormSubmitted] = useLocalStorage('subscribed', 'no')
+  const [userEmail, setUserEmail] = useLocalStorage('SubscribeEmail', '')
+  const [formSubmitted, setFormSubmitted] = useLocalStorage('Subscribed', 'no')
 
   const {
     register,
@@ -89,9 +90,8 @@ export default function Footer() {
                 formSubmitted === 'yes' ? styles.submitSuccessfulInput : ''
               }
               type='text'
-              placeholder='Email Address'
+              placeholder='Enter Your Email'
               autoComplete='email'
-              onCopy={(e) => e.preventDefault()}
             />
             <div>
               <button
@@ -133,8 +133,8 @@ export default function Footer() {
                 theme === 'dark' ? styles.darkPopupDescription : ''
               }`}
             >
-              Now the email you specified ({userEmail}) will receive the latest
-              updates and news.
+              Now the email you specified (<span>{userEmail}</span>) will
+              receive the latest updates and news.
             </p>
           </PopupSubscribe>
         )}
@@ -213,12 +213,17 @@ export default function Footer() {
               </p>
             </div>
           </div>
-          <button
-            onClick={scrollToTop}
-            className={theme === 'dark' ? styles.darkButton : ''}
-          >
-            <IoIosArrowUp />
-          </button>
+          <div className={styles.buttons}>
+            <ThemeToggle />
+            <button
+              onClick={scrollToTop}
+              className={`${styles.scrollButton} ${
+                theme === 'dark' ? styles.darkScrollButton : ''
+              }`}
+            >
+              <IoIosArrowUp />
+            </button>
+          </div>
         </div>
       </div>
     </footer>

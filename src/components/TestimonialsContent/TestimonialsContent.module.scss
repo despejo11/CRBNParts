@@ -1,0 +1,215 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 200px;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .title {
+      margin-bottom: 30px;
+      font-size: 80px;
+      color: $gray;
+    }
+
+    .description {
+      color: $gray-h;
+      font-size: 17px;
+      text-wrap: balance;
+    }
+  }
+
+  &__darkText {
+    .title {
+      color: $white-h;
+    }
+
+    .description {
+      color: $white;
+    }
+  }
+
+  &__testimonials {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 90px;
+    justify-content: center;
+
+    .testimonial {
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      @include card($bg-card-l);
+
+      .name {
+        font-size: 20px;
+        color: $gray;
+        margin-bottom: 25px;
+      }
+
+      .description {
+        color: $gray-h;
+        text-wrap: balance;
+        font-size: 14px;
+      }
+
+      .date {
+        color: $blue;
+        margin-top: 15px;
+        font-size: 15px;
+      }
+    }
+
+    .darkTestimonial {
+      @include card($bg-card-d);
+
+      .name {
+        color: $white-h;
+      }
+
+      .description {
+        color: $white;
+      }
+
+      .date {
+        color: $blue-a;
+      }
+    }
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    width: 160px;
+    @include regular-btn($violet, $white-a, 17px, 20px, 10px);
+    @include hover-btn($violet-h);
+    @include active-btn($violet-a);
+    @include media-btn($violet);
+  }
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+
+  .submitSuccessfulTextarea {
+    opacity: 0.5;
+  }
+
+  textarea {
+    resize: none;
+    width: 400px;
+    height: 150px;
+    margin-top: 15px;
+    z-index: 3;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    @include input($white-h, $gray, $white, 17px, 15px, 12px, $gray, #9f9f9f);
+  }
+
+  div {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    button {
+      width: 160px;
+      height: 40px;
+      @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+      @include hover-btn($blue-h);
+      @include active-btn($blue-a);
+      @include media-btn($blue);
+    }
+
+    .submitSuccessfulBtn {
+      cursor: auto;
+      opacity: 0.5;
+      @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+      @include hover-btn($blue);
+      @include active-btn($blue);
+      @include media-btn($blue);
+    }
+
+    p {
+      display: flex;
+      align-items: center;
+      color: $red-a;
+      gap: 4px;
+      font-size: 14px;
+
+      svg {
+        font-size: 20px;
+        color: $red;
+      }
+    }
+  }
+}
+
+.darkPopup {
+  textarea {
+    @include input(
+      $white-h-alt,
+      $gray,
+      $white-a-alt,
+      17px,
+      15px,
+      12px,
+      $white-h,
+      #828282
+    );
+  }
+
+  div {
+    p {
+      color: $red-a;
+
+      svg {
+        color: $red-h;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    &__text {
+      .title {
+        font-size: 10vw;
+      }
+
+      .description {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .popup {
+    textarea {
+      width: 220px;
+    }
+
+    div {
+      button {
+        width: 110px;
+      }
+
+      p {
+        font-size: 11px;
+
+        svg {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

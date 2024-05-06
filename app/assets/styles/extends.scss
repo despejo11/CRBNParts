@@ -22,9 +22,48 @@
   font-family: 'Russo One', sans-serif;
 }
 
-%footer-card {
+%card {
   padding-inline: 35px;
   padding-block: 20px;
   border-radius: 20px;
   box-shadow: $b-sh;
+}
+
+%popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 999;
+  opacity: 0;
+  display: none;
+}
+
+%popup-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+}
+
+%popup-content {
+  position: relative;
+  margin: 25px;
+  max-width: 650px;
+  border-radius: 20px;
+  background: linear-gradient(20deg, $white, $white-h);
+  padding: 60px 30px 30px 30px;
+  box-shadow: $b-sh;
+}
+
+%popup-darkContent {
+  background: linear-gradient(20deg, $gray, $gray-h);
 }

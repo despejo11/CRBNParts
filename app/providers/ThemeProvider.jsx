@@ -5,7 +5,7 @@ import { createContext, useEffect } from 'react'
 export const ThemeContext = createContext()
 
 export default function ThemeProvider({ children }) {
-  const [theme, setTheme] = useLocalStorage('theme', 'light')
+  const [theme, setTheme] = useLocalStorage('Theme', 'light')
 
   useEffect(() => {
     if (theme === 'dark') {

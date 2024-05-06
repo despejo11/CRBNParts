@@ -16,14 +16,14 @@ footer {
     top: 450px;
     right: 0;
     bottom: 0;
-    left: 550px;
+    left: 400px;
     max-width: 550px;
     margin: auto;
     z-index: 0;
   }
 
   .subscribe {
-    @include footer-card($bg-card-l);
+    @include card($bg-card-l);
     display: flex;
     gap: 30px;
     margin-bottom: 100px;
@@ -120,14 +120,22 @@ footer {
     font-size: 15px;
     color: $gray-h;
     text-wrap: balance;
+
+    span {
+      color: $gray;
+    }
   }
 
   .darkPopupDescription {
     color: $white;
+
+    span {
+      color: $white-h;
+    }
   }
 
   .darkSubscribe {
-    @include footer-card($bg-card-d);
+    @include card($bg-card-d);
 
     div {
       p {
@@ -177,7 +185,7 @@ footer {
     }
 
     &__contentCRBNParts {
-      @include footer-card($bg-card-l);
+      @include card($bg-card-l);
       display: flex;
       flex-direction: column;
       width: 280px;
@@ -224,7 +232,7 @@ footer {
     }
 
     &__darkContentCRBNParts {
-      @include footer-card($bg-card-d);
+      @include card($bg-card-d);
 
       .links {
         a {
@@ -250,7 +258,7 @@ footer {
     }
 
     &__contentCompany {
-      @include footer-card($bg-card-l);
+      @include card($bg-card-l);
       width: 280px;
       z-index: 1;
 
@@ -272,7 +280,7 @@ footer {
           &::after {
             content: '';
             position: absolute;
-            height: 2px;
+            height: 1.75px;
             width: 0;
             bottom: 0;
             left: 0;
@@ -300,7 +308,7 @@ footer {
     }
 
     &__darkContentCompany {
-      @include footer-card($bg-card-d);
+      @include card($bg-card-d);
 
       .links {
         a {
@@ -317,7 +325,7 @@ footer {
     }
 
     &__contentWorkingHours {
-      @include footer-card($bg-card-l);
+      @include card($bg-card-l);
       width: 280px;
       z-index: 1;
 
@@ -331,7 +339,7 @@ footer {
     }
 
     &__darkContentWorkingHours {
-      @include footer-card($bg-card-d);
+      @include card($bg-card-d);
 
       .text {
         color: $white;
@@ -375,19 +383,25 @@ footer {
       }
     }
 
-    button {
-      @include round-btn($gray, $white, 25px, 8px);
-      @include hover-btn($gray-h);
-      @include active-btn($gray-a);
-      @include media-btn($gray);
-      z-index: 1;
-    }
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
 
-    .darkButton {
-      @include round-btn($white, $gray, 25px, 8px);
-      @include hover-btn($white-h);
-      @include active-btn($white-a);
-      @include media-btn($white);
+      .scrollButton {
+        @include round-btn($gray, $white, 25px, 8px);
+        @include hover-btn($gray-h);
+        @include active-btn($gray-a);
+        @include media-btn($gray);
+        z-index: 1;
+      }
+
+      .darkScrollButton {
+        @include round-btn($white, $gray, 25px, 8px);
+        @include hover-btn($white-h);
+        @include active-btn($white-a);
+        @include media-btn($white);
+      }
     }
 
     .darkContent {
@@ -434,6 +448,10 @@ footer {
       .content {
         flex-direction: column;
         text-align: center;
+      }
+
+      .buttons {
+        flex-direction: column;
       }
     }
   }

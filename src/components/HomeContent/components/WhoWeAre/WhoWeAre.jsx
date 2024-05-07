@@ -3,6 +3,8 @@ import styles from './WhoWeAre.module.scss'
 import { ThemeContext } from '../../../../../app/providers/ThemeProvider'
 import { useContext } from 'react'
 
+import { Link } from 'react-router-dom'
+
 export default function WhoWeAre() {
   const [theme] = useContext(ThemeContext)
 
@@ -20,7 +22,9 @@ export default function WhoWeAre() {
             the right place! We offer a variety of options including bumpers,
             splitters, hoods, and more.
           </p>
-          <button>Learn More</button>
+          <Link to='/about'>
+            <button>Learn More</button>
+          </Link>
         </div>
         <img
           className={styles.image}

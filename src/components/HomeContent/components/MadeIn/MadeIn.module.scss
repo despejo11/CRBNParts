@@ -5,7 +5,7 @@
   text-align: center;
 
   .title {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     font-size: 80px;
     color: $gray;
   }
@@ -13,6 +13,7 @@
   .description {
     color: $gray-h;
     font-size: 17px;
+    margin-top: 20px;
     text-wrap: balance;
   }
 
@@ -28,15 +29,11 @@
 
 .darkContent {
   .title {
-    margin-bottom: 30px;
-    font-size: 80px;
     color: $white-h;
   }
 
   .description {
     color: $white;
-    font-size: 17px;
-    text-wrap: balance;
   }
 }
 

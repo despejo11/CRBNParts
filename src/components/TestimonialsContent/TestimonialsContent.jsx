@@ -55,7 +55,7 @@ export default function TestimonialsContent() {
             theme === 'dark' ? styles.content__darkText : ''
           }`}
         >
-          <p className={styles.title}>Client's Testimonials</p>
+          <p className={styles.title}>Client's testimonials</p>
           <p className={styles.description}>
             Discover the positive impact we’ve had on our clients by reading
             their testimonials. Our clients have experienced our services, and

@@ -189,7 +189,7 @@ export default function Footer() {
           >
             <p className={styles.title}>Working hours</p>
             <div className={styles.text}>
-              <p>Mon - Fri: 9:00AM - 9:00PM</p>
+              <p>Mon - Fri: 9:00 AM - 9:00 PM</p>
               <p>Sat: 9:00 AM - 7:00 PM</p>
               <p>Sun: Closed</p>
             </div>

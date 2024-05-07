@@ -1,14 +1,14 @@
 import Header from '../components/Header/Header'
 import Location from '../components/Location/Location'
-import TestimonialsContent from '../components/TestimonialsContent/TestimonialsContent'
+import AboutContent from '../components/AboutContent/AboutContent'
 import Footer from '../components/Footer/Footer'
 
-export default function Testimonials() {
+export default function About() {
   return (
     <>
       <Header />
-      <Location>Testimonials</Location>
-      <TestimonialsContent />
+      <Location>About</Location>
+      <AboutContent />
       <Footer />
     </>
   )

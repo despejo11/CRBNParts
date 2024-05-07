@@ -1,0 +1,97 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 100px;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .title {
+      margin-bottom: 30px;
+      font-size: 80px;
+      color: $gray;
+    }
+
+    .description {
+      color: $gray-h;
+      font-size: 17px;
+      text-wrap: balance;
+    }
+  }
+
+  &__darkText {
+    .title {
+      color: $white-h;
+    }
+
+    .description {
+      color: $white;
+    }
+  }
+
+  .section {
+    margin-top: 100px;
+
+    .title {
+      font-size: 60px;
+      color: $gray;
+    }
+
+    .titled {
+      color: $blue;
+      margin-top: 10px;
+      font-size: 17px;
+    }
+
+    .description {
+      color: $gray-h;
+      font-size: 15px;
+      margin-top: 30px;
+      text-wrap: balance;
+    }
+  }
+
+  .darkSection {
+    .title {
+      color: $white-h;
+    }
+
+    .titled {
+      color: $blue-a;
+    }
+
+    .description {
+      color: $white;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .content {
+    &__text {
+      .title {
+        font-size: 10vw;
+      }
+
+      .description {
+        font-size: 15px;
+      }
+    }
+
+    .section {
+      .title {
+        font-size: 7vw;
+      }
+
+      .titled {
+        font-size: 16px;
+      }
+
+      .description {
+        font-size: 12px;
+      }
+    }
+  }
+}

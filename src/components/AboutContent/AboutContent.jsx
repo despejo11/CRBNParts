@@ -127,7 +127,7 @@ export default function AboutContent() {
             the program "Made in Spain" program, which is an accreditation in
             itself, and demonstrates that we manufacture our products right here
             in Spain. The label itself lets our customers to know that we are a
-            trusted company that values Transparency, sustainability and ethical
+            trusted company that values transparency, sustainability and ethical
             business practices. On the website. there will be some products that
             we still import from outside of Spain for for the various product
             lines we offer, in which case the mark will not be Will not be used

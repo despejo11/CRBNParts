@@ -42,13 +42,14 @@
     .titled {
       color: $blue;
       margin-top: 10px;
+      margin-bottom: 30px;
       font-size: 17px;
     }
 
     .description {
       color: $gray-h;
       font-size: 15px;
-      margin-top: 30px;
+      margin-top: 20px;
       text-wrap: balance;
     }
   }
@@ -87,9 +88,11 @@
 
       .titled {
         font-size: 16px;
+        margin-bottom: 25px;
       }
 
       .description {
+        margin-top: 15px;
         font-size: 12px;
       }
     }

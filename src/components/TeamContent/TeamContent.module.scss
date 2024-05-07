@@ -1,0 +1,69 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 90px;
+
+  .card {
+    text-align: center;
+
+    img {
+      width: 245px;
+      object-fit: cover;
+      height: 245px;
+      box-shadow: $b-sh;
+    }
+
+    .image1br {
+      border-radius: 62% 38% 63% 37% / 39% 62% 38% 61%;
+    }
+
+    .image2br {
+      border-radius: 31% 69% 30% 70% / 39% 32% 68% 61%;
+    }
+
+    .image3br {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+
+    .name {
+      margin-top: 30px;
+      font-size: 24px;
+      color: $gray;
+    }
+
+    .position {
+      margin-top: 10px;
+      color: $gray-h;
+      font-size: 14px;
+    }
+  }
+}
+
+.darkContent {
+  .card {
+    .name {
+      color: $white-h;
+    }
+
+    .position {
+      color: $white;
+    }
+  }
+}
+
+.warning {
+  margin-top: 100px;
+  text-align: center;
+  color: $gray;
+  font-size: 12px;
+  text-wrap: balance;
+}
+
+.darkWarning {
+  color: $white-h;
+}

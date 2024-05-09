@@ -16,7 +16,7 @@ export default function TeamContent() {
         <div className={styles.card}>
           <img
             className={styles.image1br}
-            src='/DanielRamirez.png'
+            src='images/team/DanielRamirez.png'
             alt='Daniel Ramirez'
           />
           <p className={styles.name}>Daniel Ramirez</p>
@@ -26,7 +26,7 @@ export default function TeamContent() {
         <div className={styles.card}>
           <img
             className={styles.image2br}
-            src='/AnaPerez.png'
+            src='images/team/AnaPerez.png'
             alt='Ana Perez'
           />
           <p className={styles.name}>Ana Perez</p>
@@ -36,7 +36,7 @@ export default function TeamContent() {
         <div className={styles.card}>
           <img
             className={styles.image3br}
-            src='/LuisRodriguez.png'
+            src='images/team/LuisRodriguez.png'
             alt='Luis Rodriguez'
           />
           <p className={styles.name}>Luis Rodriguez</p>
@@ -46,7 +46,7 @@ export default function TeamContent() {
         <div className={styles.card}>
           <img
             className={styles.image2br}
-            src='/MariaGarcia.png'
+            src='images/team/MariaGarcia.png'
             alt='Maria Garcia'
           />
           <p className={styles.name}>Maria Garcia</p>
@@ -56,7 +56,7 @@ export default function TeamContent() {
         <div className={styles.card}>
           <img
             className={styles.image3br}
-            src='/JuanLopez.png'
+            src='images/team/JuanLopez.png'
             alt='Juan Lopez'
           />
           <p className={styles.name}>Juan Lopez</p>
@@ -66,7 +66,7 @@ export default function TeamContent() {
         <div className={styles.card}>
           <img
             className={styles.image1br}
-            src='/AlejandroMartinez.png'
+            src='images/team/AlejandroMartinez.png'
             alt='Alejandro Martinez'
           />
           <p className={styles.name}>Alejandro Martinez</p>

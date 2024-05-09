@@ -1,0 +1,57 @@
+@import '/index.scss';
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 999;
+  opacity: 0;
+  display: none;
+
+  .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+
+    .content {
+      position: relative;
+      margin: 25px;
+      max-width: 650px;
+      border-radius: 20px;
+      background: linear-gradient(20deg, $white, $white-h);
+      padding: 60px 30px 30px 30px;
+      box-shadow: $b-sh;
+
+      .close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        @include round-btn($gray, $white, 24px, 6px);
+        @include hover-btn($gray-h);
+        @include active-btn($gray-a);
+        @include media-btn($gray);
+      }
+    }
+
+    .darkContent {
+      background: linear-gradient(20deg, $gray, $gray-h);
+
+      .close {
+        @include round-btn($white, $gray, 24px, 6px);
+        @include hover-btn($white-h);
+        @include active-btn($white-a);
+        @include media-btn($white);
+      }
+    }
+  }
+}

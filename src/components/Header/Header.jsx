@@ -1,6 +1,6 @@
 import styles from './Header.module.scss'
 
-import Menu from '../Menu/Menu'
+import Menu from './components/Menu/Menu'
 import ThemeToggle from '../../../app/theme/ThemeToggle'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 
@@ -24,7 +24,11 @@ export default function Header() {
             <Menu />
           </div>
           <Link to='/'>
-            <img className={styles.logo} src='/Logo.png' alt='Logo' />
+            <img
+              className={styles.logo}
+              src='images/other/Logo.png'
+              alt='Logo'
+            />
           </Link>
           <div
             className={`${styles.links} ${

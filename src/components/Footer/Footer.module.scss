@@ -9,7 +9,7 @@ footer {
   position: relative;
 
   &::after {
-    background-image: url(/FooterBg.png);
+    background-image: url(images/other/FooterBg.png);
     background-size: cover;
     content: '';
     position: absolute;
@@ -49,7 +49,7 @@ footer {
 
     form {
       .submitSuccessfulInput {
-        opacity: 0.5;
+        @extend %submit-successful-input;
       }
 
       input {
@@ -83,12 +83,7 @@ footer {
         }
 
         .submitSuccessfulBtn {
-          cursor: auto;
-          opacity: 0.5;
-          @include regular-btn($blue, $white-a, 17px, 20px, 10px);
-          @include hover-btn($blue);
-          @include active-btn($blue);
-          @include media-btn($blue);
+          @extend %submit-successful-btn;
         }
 
         p {
@@ -96,10 +91,10 @@ footer {
           align-items: center;
           color: $red-a;
           gap: 4px;
-          font-size: 14px;
+          font-size: 13px;
 
           svg {
-            font-size: 20px;
+            font-size: 19px;
             color: $red;
           }
         }
@@ -478,6 +473,14 @@ footer {
         div {
           button {
             width: 110px;
+          }
+
+          p {
+            font-size: 9px;
+
+            svg {
+              font-size: 14px;
+            }
           }
         }
       }

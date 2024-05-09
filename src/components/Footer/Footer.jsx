@@ -1,5 +1,5 @@
 import styles from './Footer.module.scss'
-import PopupSubscribe from './components/PopupSubscribe/PopupSubscribe'
+import Popup from '../Popup/Popup'
 import useLocalStorage from '../../../app/hooks/useLocalStorage'
 import ThemeToggle from '../../../app/theme/ThemeToggle'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
@@ -83,6 +83,10 @@ export default function Footer() {
                   value: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
                   message: 'Invalid',
                 },
+                maxLength: {
+                  value: 100,
+                  message: 'Max length 100',
+                },
               })}
               defaultValue={userEmail}
               disabled={formSubmitted === 'yes'}
@@ -119,7 +123,7 @@ export default function Footer() {
         </div>
 
         {isSubmitSuccessful && (
-          <PopupSubscribe openPopup={openPopup}>
+          <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
             <p
               className={`${styles.popupTitle} ${
                 theme === 'dark' ? styles.darkPopupTitle : ''
@@ -136,7 +140,7 @@ export default function Footer() {
               Now the email you specified (<span>{userEmail}</span>) will
               receive the latest updates and news.
             </p>
-          </PopupSubscribe>
+          </Popup>
         )}
 
         <div
@@ -202,7 +206,7 @@ export default function Footer() {
               theme === 'dark' ? styles.darkContent : ''
             }`}
           >
-            <img src='/Logo.png' alt='Logo' />
+            <img src='images/other/Logo.png' alt='Logo' />
             <div>
               <p className={styles.description}>
                 CRBNParts are independent car parts, our company does not

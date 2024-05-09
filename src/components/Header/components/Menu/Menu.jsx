@@ -1,6 +1,6 @@
 import styles from './Menu.module.scss'
 
-import { ThemeContext } from '../../../app/providers/ThemeProvider'
+import { ThemeContext } from '../../../../../app/providers/ThemeProvider'
 
 import { Link } from 'react-router-dom'
 import { useContext, useRef, useState } from 'react'

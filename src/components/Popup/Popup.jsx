@@ -1,16 +1,12 @@
-import styles from './PopupTestimonials.module.scss'
-import { ThemeContext } from '../../../../../app/providers/ThemeProvider'
+import styles from './Popup.module.scss'
+import { ThemeContext } from '../../../app/providers/ThemeProvider'
 
 import { useContext, useEffect, useRef } from 'react'
 import { IoClose } from 'react-icons/io5'
 
 import gsap from 'gsap'
 
-export default function PopupTestimonials({
-  openPopup,
-  children,
-  setOpenPopup,
-}) {
+export default function Popup({ children, openPopup, setOpenPopup }) {
   const [theme] = useContext(ThemeContext)
 
   const wrapper = useRef(null)

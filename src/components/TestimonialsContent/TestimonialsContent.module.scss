@@ -9,15 +9,11 @@
     text-align: center;
 
     .title {
-      margin-bottom: 30px;
-      font-size: 80px;
-      color: $gray;
+      @extend %title;
     }
 
     .description {
-      color: $gray-h;
-      font-size: 17px;
-      text-wrap: balance;
+      @extend %description;
     }
   }
 
@@ -100,7 +96,7 @@
   flex-direction: column;
 
   .submitSuccessfulTextarea {
-    opacity: 0.5;
+    @extend %submit-successful-input;
   }
 
   textarea {
@@ -132,12 +128,7 @@
     }
 
     .submitSuccessfulBtn {
-      cursor: auto;
-      opacity: 0.5;
-      @include regular-btn($blue, $white-a, 17px, 20px, 10px);
-      @include hover-btn($blue);
-      @include active-btn($blue);
-      @include media-btn($blue);
+      @extend %submit-successful-btn;
     }
 
     p {
@@ -204,10 +195,10 @@
       }
 
       p {
-        font-size: 11px;
+        font-size: 10px;
 
         svg {
-          font-size: 16px;
+          font-size: 15px;
         }
       }
     }

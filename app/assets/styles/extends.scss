@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 %round-btn {
   border-radius: 50%;
   display: flex;
@@ -29,41 +31,27 @@
   box-shadow: $b-sh;
 }
 
-%popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
-  overflow: hidden;
-  overflow-y: auto;
-  z-index: 999;
-  opacity: 0;
-  display: none;
+%title {
+  margin-bottom: 30px;
+  font-size: 80px;
+  color: $gray;
 }
 
-%popup-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  min-height: 100%;
+%description {
+  color: $gray-h;
+  font-size: 17px;
+  text-wrap: balance;
 }
 
-%popup-content {
-  position: relative;
-  margin: 25px;
-  max-width: 650px;
-  border-radius: 20px;
-  background: linear-gradient(20deg, $white, $white-h);
-  padding: 60px 30px 30px 30px;
-  box-shadow: $b-sh;
+%submit-successful-btn {
+  cursor: auto;
+  opacity: 0.5;
+  @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+  @include hover-btn($blue);
+  @include active-btn($blue);
+  @include media-btn($blue);
 }
 
-%popup-darkContent {
-  background: linear-gradient(20deg, $gray, $gray-h);
+%submit-successful-input {
+  opacity: 0.5;
 }

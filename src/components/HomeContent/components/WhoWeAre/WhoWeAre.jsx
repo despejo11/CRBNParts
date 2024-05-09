@@ -28,7 +28,7 @@ export default function WhoWeAre() {
         </div>
         <img
           className={styles.image}
-          src='/HomeContent.png'
+          src='images/other/HomeContent.png'
           alt='Carbon Fiber Figure'
         />
       </div>

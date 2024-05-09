@@ -12,15 +12,11 @@
     flex-direction: column;
 
     .title {
-      margin-bottom: 30px;
-      font-size: 80px;
-      color: $gray;
+      @extend %title;
     }
 
     .description {
-      color: $gray-h;
-      font-size: 17px;
-      text-wrap: balance;
+      @extend %description;
     }
 
     button {

@@ -1,0 +1,310 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 150px;
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+    img {
+      max-width: 380px;
+    }
+
+    form {
+      @include card($bg-card-l);
+      max-width: 710px;
+
+      div {
+        .title {
+          font-size: 60px;
+          color: $gray;
+        }
+
+        .titled {
+          margin-top: 10px;
+          color: $gray-h;
+          font-size: 17px;
+          text-wrap: balance;
+        }
+      }
+
+      .inputs {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+
+        .flex {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 40px;
+
+          .input {
+            input {
+              width: 300px;
+              @include input(
+                $white-h,
+                $gray,
+                $white,
+                17px,
+                20px,
+                10px,
+                $gray,
+                #9f9f9f
+              );
+            }
+          }
+        }
+      }
+
+      .textareaFlex {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+
+        .textarea {
+          textarea {
+            resize: none;
+            width: 300px;
+            height: 150px;
+            z-index: 3;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            @include input(
+              $white-h,
+              $gray,
+              $white,
+              17px,
+              15px,
+              12px,
+              $gray,
+              #9f9f9f
+            );
+          }
+        }
+
+        .text {
+          color: $gray-h;
+          font-size: 14px;
+          width: 300px;
+
+          .warning {
+            font-size: 17px;
+            color: $gray;
+            margin-bottom: 10px;
+            text-wrap: balance;
+          }
+        }
+      }
+
+      .error {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        color: $red-a;
+        gap: 4px;
+        font-size: 14px;
+
+        svg {
+          font-size: 20px;
+          color: $red;
+        }
+      }
+
+      .errorTextarea {
+        margin-top: 1px;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        color: $red-a;
+        gap: 4px;
+        font-size: 16px;
+
+        svg {
+          font-size: 22px;
+          color: $red;
+        }
+      }
+
+      .submitSuccessfulBtn {
+        @extend %submit-successful-btn;
+      }
+
+      .submitSuccessfulInput {
+        @extend %submit-successful-input;
+      }
+
+      button {
+        width: 160px;
+        height: 40px;
+        margin-top: 40px;
+        @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+        @include hover-btn($blue-h);
+        @include active-btn($blue-a);
+        @include media-btn($blue);
+      }
+    }
+
+    .darkForm {
+      @include card($bg-card-d);
+
+      div {
+        .title {
+          color: $white-h;
+        }
+
+        .titled {
+          color: $white;
+        }
+      }
+
+      .inputs {
+        .flex {
+          .input {
+            input {
+              @include input(
+                $white-h-alt,
+                $gray,
+                $white-a-alt,
+                17px,
+                20px,
+                10px,
+                $white-h,
+                #828282
+              );
+            }
+          }
+        }
+      }
+
+      .textareaFlex {
+        .textarea {
+          textarea {
+            @include input(
+              $white-h-alt,
+              $gray,
+              $white-a-alt,
+              17px,
+              20px,
+              10px,
+              $white-h,
+              #828282
+            );
+          }
+        }
+
+        .text {
+          color: $white;
+
+          .warning {
+            color: $white-h;
+          }
+        }
+      }
+
+      .error {
+        color: $red;
+
+        svg {
+          color: $red-h;
+        }
+      }
+
+      .errorTextarea {
+        color: $red;
+
+        svg {
+          color: $red-h;
+        }
+      }
+    }
+  }
+
+  .popupTitle {
+    font-size: 35px;
+    color: $gray;
+  }
+
+  .darkPopupTitle {
+    color: $white-h;
+  }
+
+  .popupDescription {
+    font-size: 15px;
+    color: $gray-h;
+    text-wrap: balance;
+
+    span {
+      color: $gray;
+    }
+  }
+
+  .darkPopupDescription {
+    color: $white;
+
+    span {
+      color: $white-h;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .content {
+    &__form {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+  .content {
+    &__form {
+      form {
+        div {
+          .title {
+            font-size: 7vw;
+          }
+
+          .titled {
+            font-size: 15px;
+          }
+        }
+
+        .inputs {
+          .flex {
+            .input {
+              input {
+                width: 210px;
+              }
+            }
+          }
+        }
+
+        .textareaFlex {
+          .textarea {
+            textarea {
+              width: 210px;
+            }
+          }
+
+          .text {
+            width: 210px;
+            font-size: 12px;
+
+            .warning {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,17 +4,16 @@
   margin-top: 150px;
   text-align: center;
 
+  p {
+    @extend %description;
+  }
+
   .title {
-    margin-bottom: 10px;
-    font-size: 80px;
-    color: $gray;
+    @extend %title;
   }
 
   .description {
-    color: $gray-h;
-    font-size: 17px;
-    margin-top: 20px;
-    text-wrap: balance;
+    margin-bottom: 20px;
   }
 
   button {

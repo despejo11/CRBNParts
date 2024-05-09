@@ -13,7 +13,7 @@ export default function Location({ children }) {
       }`}
     >
       <p>{children}</p>
-      <img src='/LocationBg.png' alt='Carbon Fiber Figure' />
+      <img src='images/other/LocationBg.png' alt='Carbon Fiber Figure' />
     </div>
   )
 }

@@ -20,7 +20,7 @@ export default function MadeIn() {
           One of the things that we’re most proud of is that back in 2021 we
           became “Made in Spain” Approved for the parts we produce and sell.
         </p>
-        <p className={styles.description}>
+        <p>
           This means that we are one of the only automotive carbon fiber
           manufacturers in the Spain with this accreditation that sets us apart
           from the rest of other part sellers out there.

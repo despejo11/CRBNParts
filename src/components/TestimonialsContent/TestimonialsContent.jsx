@@ -1,5 +1,5 @@
 import styles from './TestimonialsContent.module.scss'
-import PopupTestimonials from './components/PopupTestimonials/PopupTestimonials'
+import Popup from '../Popup/Popup'
 import useLocalStorage from '../../../app/hooks/useLocalStorage'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 
@@ -177,7 +177,7 @@ export default function TestimonialsContent() {
         <button onClick={() => setOpenPopup(true)}>Leave Your</button>
       </div>
       {openPopup && (
-        <PopupTestimonials openPopup={openPopup} setOpenPopup={setOpenPopup}>
+        <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
           <div
             className={`${styles.popup} ${
               theme === 'dark' ? styles.darkPopup : ''
@@ -191,6 +191,10 @@ export default function TestimonialsContent() {
                     value: 10,
                     message: 'Min length 10',
                   },
+                  maxLength: {
+                    value: 450,
+                    message: 'Max length 450',
+                  },
                 })}
                 defaultValue={userText}
                 disabled={leaveTestimonial === 'yes'}
@@ -202,7 +206,6 @@ export default function TestimonialsContent() {
                 placeholder='Enter Your Text'
                 name='textarea'
                 id='textarea'
-                maxLength={450}
               ></textarea>
               <div>
                 <button
@@ -232,7 +235,7 @@ export default function TestimonialsContent() {
               </div>
             </form>
           </div>
-        </PopupTestimonials>
+        </Popup>
       )}
     </div>
   )

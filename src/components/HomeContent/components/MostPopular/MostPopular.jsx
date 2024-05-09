@@ -86,7 +86,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image1br}
-                      src='/Ferrari812Superfast.png'
+                      src='images/cars/Ferrari812Superfast.png'
                       alt='Ferrari 812 Superfast'
                     />
                     <p>
@@ -98,7 +98,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image2br}
-                      src='/FerrariSF90Stradale.png'
+                      src='images/cars/FerrariSF90Stradale.png'
                       alt='Ferrari SF90 Stradale'
                     />
                     <p>
@@ -110,7 +110,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image3br}
-                      src='/Ferrari488Pista.png'
+                      src='images/cars/Ferrari488Pista.png'
                       alt='Ferrari 488 Pista'
                     />
                     <p>
@@ -125,7 +125,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image1br}
-                      src='/Porsche911GT3RS.png'
+                      src='images/cars/Porsche911GT3RS.png'
                       alt='Porsche 911 GT3 RS'
                     />
                     <p>
@@ -136,7 +136,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image2br}
-                      src='/PorscheTaycanTurboS.png'
+                      src='images/cars/PorscheTaycanTurboS.png'
                       alt='Porsche Taycan Turbo S'
                     />
                     <p>
@@ -148,7 +148,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image3br}
-                      src='/Porsche911TurboS.png'
+                      src='images/cars/Porsche911TurboS.png'
                       alt='Porsche 911 Turbo S'
                     />
                     <p>
@@ -163,7 +163,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image2br}
-                      src='/LamborghiniAventadorSVJ.png'
+                      src='images/cars/LamborghiniAventadorSVJ.png'
                       alt='Lamborghini Aventador SVJ'
                     />
                     <p>
@@ -175,7 +175,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image1br}
-                      src='/LamborghiniUrus.png'
+                      src='images/cars/LamborghiniUrus.png'
                       alt='Lamborghini Urus'
                     />
                     <p>
@@ -186,7 +186,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image3br}
-                      src='/LamborghiniHuracanSTO.png'
+                      src='images/cars/LamborghiniHuracanSTO.png'
                       alt='Lamborghini Huracan STO'
                     />
                     <p>
@@ -202,7 +202,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image1br}
-                      src='/McLaren765LT.png'
+                      src='images/cars/McLaren765LT.png'
                       alt='McLaren 765LT'
                     />
                     <p>
@@ -213,7 +213,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image2br}
-                      src='/MercedesBenzE63S.png'
+                      src='images/cars/MercedesBenzE63S.png'
                       alt='Mercedes-Benz E63 S'
                     />
                     <p>
@@ -225,7 +225,7 @@ export default function MostPopular() {
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
                       className={styles.image3br}
-                      src='/BMWM8Competition.png'
+                      src='images/cars/BMWM8Competition.png'
                       alt='BMW M8 Competition'
                     />
                     <p>

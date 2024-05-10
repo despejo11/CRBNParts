@@ -23,7 +23,8 @@
   $padding-i,
   $padding-b,
   $border-f,
-  $place-h
+  $place-h,
+  $color-s
 ) {
   @extend %input;
   background-color: #{$bg-color};
@@ -35,6 +36,10 @@
   &:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #{$bg-color} inset;
     -webkit-text-fill-color: $gray;
+    &::selection {
+      -webkit-box-shadow: 0 0 0px 1000px $gray inset;
+      -webkit-text-fill-color: #{$color-s};
+    }
   }
   &:-webkit-autofill:focus {
     -webkit-box-shadow: 0 0 0px 1000px #{$bg-color} inset;

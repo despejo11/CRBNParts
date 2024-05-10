@@ -1,56 +1,20 @@
 import styles from './Footer.module.scss'
-import Popup from '../Popup/Popup'
-import useLocalStorage from '../../../app/hooks/useLocalStorage'
+import Subscribe from './components/Subscribe/Subscribe'
 import ThemeToggle from '../../../app/theme/ThemeToggle'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 
 import { Link } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
-import { useContext, useState, useEffect } from 'react'
+import { useContext } from 'react'
 
-import { IoLogoInstagram, IoCheckmark } from 'react-icons/io5'
+import { IoLogoInstagram } from 'react-icons/io5'
 import { IoIosArrowUp } from 'react-icons/io'
-import { PiWarningCircleLight } from 'react-icons/pi'
 import { FaFacebookSquare } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
 import { animateScroll as scroll } from 'react-scroll'
 
-import { quantum } from 'ldrs'
-quantum.register()
-
 export default function Footer() {
   const [theme] = useContext(ThemeContext)
-
-  const [openPopup, setOpenPopup] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [userEmail, setUserEmail] = useLocalStorage('SubscribeEmail', '')
-  const [formSubmitted, setFormSubmitted] = useLocalStorage('Subscribed', 'no')
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitSuccessful },
-    reset,
-  } = useForm({
-    mode: 'onChange',
-  })
-
-  const onSubmit = (data) => {
-    setLoading(true)
-    setUserEmail(data.email)
-    reset()
-    setTimeout(() => {
-      setLoading(false)
-      setOpenPopup(true)
-    }, 3000)
-  }
-
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      setFormSubmitted('yes')
-    }
-  }, [isSubmitSuccessful])
 
   const scrollToTop = () => {
     scroll.scrollToTop({ duration: 1000 })
@@ -59,90 +23,7 @@ export default function Footer() {
   return (
     <footer id='footer' className={theme === 'dark' ? styles.darkFooter : ''}>
       <div className='container'>
-        <div
-          className={`${styles.subscribe} ${
-            theme === 'dark' ? styles.darkSubscribe : ''
-          }`}
-        >
-          <div>
-            <p>
-              Stay in the know with our newsletter subscription! Get the latest
-              updates and news.
-            </p>
-            <p className={styles.notification}>
-              If you subscribe, there is a chance to get a 10% discount on your
-              next purchase.
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <input
-              {...register('email', {
-                required: 'Required',
-                pattern: {
-                  value: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
-                  message: 'Invalid',
-                },
-                maxLength: {
-                  value: 100,
-                  message: 'Max length 100',
-                },
-              })}
-              defaultValue={userEmail}
-              disabled={formSubmitted === 'yes'}
-              className={
-                formSubmitted === 'yes' ? styles.submitSuccessfulInput : ''
-              }
-              type='text'
-              placeholder='Enter Your Email'
-              autoComplete='email'
-            />
-            <div>
-              <button
-                className={
-                  formSubmitted === 'yes' ? styles.submitSuccessfulBtn : ''
-                }
-                disabled={formSubmitted === 'yes'}
-              >
-                {loading ? (
-                  <l-quantum size='15' speed='1.75' color='#e7e7e7'></l-quantum>
-                ) : formSubmitted === 'yes' ? (
-                  <IoCheckmark />
-                ) : (
-                  'Submit'
-                )}
-              </button>
-              {errors?.email && (
-                <p>
-                  <PiWarningCircleLight />
-                  {errors.email.message}
-                </p>
-              )}
-            </div>
-          </form>
-        </div>
-
-        {isSubmitSuccessful && (
-          <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
-            <p
-              className={`${styles.popupTitle} ${
-                theme === 'dark' ? styles.darkPopupTitle : ''
-              }`}
-            >
-              Thank you!
-            </p>
-            <br />
-            <p
-              className={`${styles.popupDescription} ${
-                theme === 'dark' ? styles.darkPopupDescription : ''
-              }`}
-            >
-              Now the email you specified (<span>{userEmail}</span>) will
-              receive the latest updates and news.
-            </p>
-          </Popup>
-        )}
-
+        <Subscribe />
         <div
           className={`${styles.columns} ${
             theme === 'dark' ? styles.darkColumns : ''

@@ -4,16 +4,18 @@
   margin-top: 150px;
   text-align: center;
 
-  p {
-    @extend %description;
-  }
-
   .title {
     @extend %title;
   }
 
   .description {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+      @extend %description;
+    }
   }
 
   button {
@@ -32,7 +34,9 @@
   }
 
   .description {
-    color: $white;
+    p {
+      color: $white;
+    }
   }
 }
 
@@ -43,7 +47,9 @@
     }
 
     .description {
-      font-size: 15px;
+      p {
+        font-size: 15px;
+      }
     }
   }
 }

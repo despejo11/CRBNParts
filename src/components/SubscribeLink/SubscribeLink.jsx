@@ -1,11 +1,11 @@
-import styles from './Subscribe.module.scss'
+import styles from './SubscribeLink.module.scss'
 
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 import { useContext } from 'react'
 
 import { scroller } from 'react-scroll'
 
-export default function Subscribe() {
+export default function SubscribeLink() {
   const [theme] = useContext(ThemeContext)
 
   const scrollToFooter = () => {

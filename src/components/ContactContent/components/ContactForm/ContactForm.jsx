@@ -118,7 +118,8 @@ export default function ContactForm() {
                   {...register('email', {
                     required: 'Required',
                     pattern: {
-                      value: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
+                      value:
+                        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                       message: 'Invalid',
                     },
                     maxLength: {

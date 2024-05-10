@@ -1,51 +1,11 @@
 import styles from './TestimonialsContent.module.scss'
-import Popup from '../Popup/Popup'
-import useLocalStorage from '../../../app/hooks/useLocalStorage'
+import TestimonialsForm from './components/TestimonialsForm'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 
-import { useContext, useState, useEffect } from 'react'
-import { useForm } from 'react-hook-form'
-
-import { PiWarningCircleLight } from 'react-icons/pi'
-import { IoCheckmark } from 'react-icons/io5'
-
-import { quantum } from 'ldrs'
-quantum.register()
+import { useContext } from 'react'
 
 export default function TestimonialsContent() {
   const [theme] = useContext(ThemeContext)
-
-  const [openPopup, setOpenPopup] = useState()
-  const [loading, setLoading] = useState()
-  const [userText, setUserText] = useLocalStorage('Testimonial', '')
-  const [leaveTestimonial, setLeaveTestimonial] = useLocalStorage(
-    'LeaveTestimonial',
-    'no'
-  )
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitSuccessful },
-    reset,
-  } = useForm({
-    mode: 'onChange',
-  })
-
-  const onSubmit = (data) => {
-    reset()
-    setLoading(true)
-    setUserText(data.textarea)
-    setTimeout(() => {
-      setLoading(false)
-    }, 2000)
-  }
-
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      setLeaveTestimonial('yes')
-    }
-  }, [isSubmitSuccessful])
 
   return (
     <div className='container'>
@@ -174,69 +134,8 @@ export default function TestimonialsContent() {
             <p className={styles.date}>21 Mar, 2024</p>
           </div>
         </div>
-        <button onClick={() => setOpenPopup(true)}>Leave Your</button>
+        <TestimonialsForm />
       </div>
-      {openPopup && (
-        <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
-          <div
-            className={`${styles.popup} ${
-              theme === 'dark' ? styles.darkPopup : ''
-            }`}
-          >
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <textarea
-                {...register('textarea', {
-                  required: 'Required',
-                  minLength: {
-                    value: 10,
-                    message: 'Min length 10',
-                  },
-                  maxLength: {
-                    value: 450,
-                    message: 'Max length 450',
-                  },
-                })}
-                defaultValue={userText}
-                disabled={leaveTestimonial === 'yes'}
-                className={
-                  leaveTestimonial === 'yes'
-                    ? styles.submitSuccessfulTextarea
-                    : ''
-                }
-                placeholder='Enter Your Text'
-                name='textarea'
-                id='textarea'
-              ></textarea>
-              <div>
-                <button
-                  className={
-                    leaveTestimonial === 'yes' ? styles.submitSuccessfulBtn : ''
-                  }
-                  disabled={leaveTestimonial === 'yes'}
-                >
-                  {loading ? (
-                    <l-quantum
-                      size='15'
-                      speed='1.75'
-                      color='#e7e7e7'
-                    ></l-quantum>
-                  ) : leaveTestimonial === 'yes' ? (
-                    <IoCheckmark />
-                  ) : (
-                    'Send'
-                  )}
-                </button>
-                {errors?.textarea && (
-                  <p>
-                    <PiWarningCircleLight />
-                    {errors.textarea.message}
-                  </p>
-                )}
-              </div>
-            </form>
-          </div>
-        </Popup>
-      )}
     </div>
   )
 }

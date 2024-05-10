@@ -9,7 +9,7 @@ footer {
   position: relative;
 
   &::after {
-    background-image: url(images/other/FooterBg.png);
+    background-image: url(/images/other/FooterBg.png);
     background-size: cover;
     content: '';
     position: absolute;
@@ -20,152 +20,6 @@ footer {
     max-width: 550px;
     margin: auto;
     z-index: 0;
-  }
-
-  .subscribe {
-    @include card($bg-card-l);
-    display: flex;
-    gap: 30px;
-    margin-bottom: 100px;
-
-    div {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-
-      p {
-        font-size: 26px;
-        color: $gray;
-        text-wrap: balance;
-      }
-
-      .notification {
-        font-size: 16px;
-        margin-top: 10px;
-        color: $gray-h;
-        text-wrap: balance;
-      }
-    }
-
-    form {
-      .submitSuccessfulInput {
-        @extend %submit-successful-input;
-      }
-
-      input {
-        width: 300px;
-        @include input(
-          $white-h,
-          $gray,
-          $white,
-          17px,
-          20px,
-          10px,
-          $gray,
-          #9f9f9f
-        );
-      }
-
-      div {
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
-
-        button {
-          width: 160px;
-          height: 40px;
-          @include regular-btn($blue, $white-a, 17px, 20px, 10px);
-          @include hover-btn($blue-h);
-          @include active-btn($blue-a);
-          @include media-btn($blue);
-        }
-
-        .submitSuccessfulBtn {
-          @extend %submit-successful-btn;
-        }
-
-        p {
-          display: flex;
-          align-items: center;
-          color: $red-a;
-          gap: 4px;
-          font-size: 13px;
-
-          svg {
-            font-size: 19px;
-            color: $red;
-          }
-        }
-      }
-    }
-  }
-
-  .popupTitle {
-    font-size: 35px;
-    color: $gray;
-  }
-
-  .darkPopupTitle {
-    color: $white-h;
-  }
-
-  .popupDescription {
-    font-size: 15px;
-    color: $gray-h;
-    text-wrap: balance;
-
-    span {
-      color: $gray;
-    }
-  }
-
-  .darkPopupDescription {
-    color: $white;
-
-    span {
-      color: $white-h;
-    }
-  }
-
-  .darkSubscribe {
-    @include card($bg-card-d);
-
-    div {
-      p {
-        color: $white-h;
-      }
-
-      .notification {
-        color: $white;
-      }
-    }
-
-    form {
-      input {
-        @include input(
-          $white-h-alt,
-          $gray,
-          $white-a-alt,
-          17px,
-          20px,
-          10px,
-          $white-h,
-          #828282
-        );
-      }
-
-      div {
-        p {
-          color: $red;
-
-          svg {
-            color: $red-h;
-          }
-        }
-      }
-    }
   }
 
   .columns {
@@ -422,10 +276,6 @@ footer {
       display: none;
     }
 
-    .subscribe {
-      flex-wrap: wrap;
-    }
-
     .columns {
       gap: 50px;
       justify-content: center;
@@ -454,38 +304,6 @@ footer {
 
 @media (max-width: 600px) {
   footer {
-    .subscribe {
-      div {
-        p {
-          font-size: 21px;
-        }
-
-        .notification {
-          font-size: 13px;
-        }
-      }
-
-      form {
-        input {
-          width: 210px;
-        }
-
-        div {
-          button {
-            width: 110px;
-          }
-
-          p {
-            font-size: 9px;
-
-            svg {
-              font-size: 14px;
-            }
-          }
-        }
-      }
-    }
-
     .popupTitle {
       font-size: 30px;
     }

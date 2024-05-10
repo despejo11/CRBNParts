@@ -1,6 +1,6 @@
 import WhoWeAre from './components/WhoWeAre/WhoWeAre'
 import MostPopular from './components/MostPopular/MostPopular'
-import Subscribe from '../Subscribe/Subscribe'
+import SubscribeLink from '../SubscribeLink/SubscribeLink'
 import MadeIn from './components/MadeIn/MadeIn'
 
 export default function HomeContent() {
@@ -8,7 +8,7 @@ export default function HomeContent() {
     <>
       <WhoWeAre />
       <MostPopular />
-      <Subscribe />
+      <SubscribeLink />
       <MadeIn />
     </>
   )

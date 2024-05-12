@@ -15,6 +15,14 @@
   padding-block: #{$padding-b};
 }
 
+@mixin availability($color, $svg-color) {
+  @extend %availability;
+  color: #{$color};
+  svg {
+    color: #{$svg-color};
+  }
+}
+
 @mixin input(
   $bg-color,
   $color,

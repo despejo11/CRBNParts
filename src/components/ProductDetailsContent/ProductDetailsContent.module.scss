@@ -1,0 +1,415 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 100px;
+
+  .backToShop {
+    @include round-btn($gray, $white, 28px, 8px);
+    @include hover-btn($gray-h);
+    @include active-btn($gray-a);
+    @include media-btn($gray);
+    margin: auto;
+    margin-bottom: 70px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .flex {
+    display: flex;
+    gap: 90px;
+
+    .images {
+      position: relative;
+
+      .activeImage {
+        border-radius: 20px;
+        width: 420px;
+        height: 460px;
+        object-fit: cover;
+        box-shadow: $b-sh;
+      }
+
+      button {
+        @include round-btn($blue, $white-a, 18px, 8px);
+        @include hover-btn($blue-h);
+        @include active-btn($blue-a);
+        @include media-btn($blue);
+      }
+
+      .disabled {
+        pointer-events: none;
+        opacity: 0.5;
+      }
+
+      .prev {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+      }
+
+      .next {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+
+      .imageRow {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        .activeImageRow {
+          filter: brightness(100%);
+
+          &:hover {
+            filter: brightness(100%);
+          }
+        }
+
+        img {
+          width: 90px;
+          height: 100px;
+          border-radius: 10px;
+          object-fit: cover;
+          box-shadow: $b-sh;
+          cursor: pointer;
+          filter: brightness(60%);
+          transition: $tr-btn;
+
+          &:hover {
+            filter: brightness(80%);
+          }
+
+          @media (max-width: 1000px) {
+            &:hover {
+              filter: brightness(60%);
+            }
+          }
+        }
+      }
+    }
+
+    &__content {
+      @include card($bg-card-l);
+      flex: 1;
+      min-width: 550px;
+
+      .makeModel {
+        font-size: 50px;
+        color: $gray;
+
+        span {
+          font-size: 19px;
+          color: $gray-h;
+        }
+      }
+
+      .productType {
+        font-size: 22px;
+        margin-top: 5px;
+        color: $gray;
+      }
+
+      .available {
+        @include availability($green-h, $green);
+      }
+
+      .notAvailable {
+        @include availability($red-h, $red);
+      }
+
+      .price {
+        margin-top: 20px;
+        color: $gray;
+        font-size: 22px;
+      }
+
+      .buttons {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .quantity {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          button {
+            @include round-btn($gray, $white, 17px, 6px);
+            @include hover-btn($gray-h);
+            @include active-btn($gray-a);
+            @include media-btn($gray);
+          }
+
+          p {
+            color: $gray;
+            font-size: 20px;
+          }
+        }
+
+        .addToCart {
+          @include round-btn($violet, $white-a, 22px, 12px);
+          @include hover-btn($violet-h);
+          @include active-btn($violet-a);
+          @include media-btn($violet);
+        }
+      }
+
+      .totalPrice {
+        color: $gray;
+        margin-top: 20px;
+        font-size: 20px;
+
+        span {
+          color: $gray-h;
+        }
+      }
+
+      .buyButtons {
+        margin-top: 30px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+
+        button {
+          display: flex;
+          justify-content: center;
+
+          svg {
+            margin-inline: 5px;
+          }
+        }
+
+        .google {
+          @include regular-btn($blue, $white-a, 17px, 23px, 13px);
+          @include hover-btn($blue-h);
+          @include active-btn($blue-a);
+          @include media-btn($blue);
+
+          svg {
+            color: $white;
+          }
+        }
+
+        .apple {
+          @include regular-btn($gray, $white, 17px, 23px, 13px);
+          @include hover-btn($gray-h);
+          @include active-btn($gray-a);
+          @include media-btn($gray);
+
+          svg {
+            color: $white-a;
+          }
+        }
+      }
+
+      .info {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p {
+          font-size: 13px;
+          color: $gray;
+
+          span {
+            font-size: 11px;
+            color: $gray-h;
+          }
+        }
+      }
+    }
+  }
+
+  .aboutProduct {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    &__content {
+      max-width: 1000px;
+
+      .title {
+        color: $gray;
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      .description {
+        font-size: 13px;
+        text-wrap: balance;
+        color: $gray-h;
+      }
+    }
+  }
+}
+
+.darkContent {
+  .backToShop {
+    @include round-btn($white, $gray, 28px, 8px);
+    @include hover-btn($white-h);
+    @include active-btn($white-a);
+    @include media-btn($white);
+  }
+
+  .flex {
+    &__content {
+      @include card($bg-card-d);
+
+      .makeModel {
+        color: $white-h;
+
+        span {
+          color: $white;
+        }
+      }
+
+      .productType {
+        color: $white-h;
+      }
+
+      .available {
+        @include availability($green-h, $green-a);
+      }
+
+      .notAvailable {
+        @include availability($red-h, $red-a);
+      }
+
+      .price {
+        color: $white-h;
+      }
+
+      .buttons {
+        .quantity {
+          button {
+            @include round-btn($white, $gray, 17px, 6px);
+            @include hover-btn($white-h);
+            @include active-btn($white-a);
+            @include media-btn($white);
+          }
+
+          p {
+            color: $white-h;
+          }
+        }
+      }
+
+      .totalPrice {
+        color: $white-h;
+
+        span {
+          color: $white;
+        }
+      }
+
+      .buyButtons {
+        .apple {
+          @include regular-btn($white, $gray-h, 17px, 23px, 13px);
+          @include hover-btn($white-h);
+          @include active-btn($white-a);
+          @include media-btn($white);
+
+          svg {
+            color: $gray;
+          }
+        }
+      }
+
+      .info {
+        p {
+          color: $white-h;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .aboutProduct {
+    &__content {
+      .title {
+        color: $white-h;
+      }
+
+      .description {
+        color: $white;
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .content {
+    .flex {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &__content {
+        max-width: 550px;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    .flex {
+      .images {
+        .activeImage {
+          width: 280px;
+          height: 320px;
+        }
+
+        .imageRow {
+          flex-wrap: wrap;
+          justify-content: center;
+          width: 280px;
+          gap: 20px;
+
+          img {
+            width: 100px;
+            height: 80px;
+          }
+        }
+      }
+
+      &__content {
+        min-width: 280px;
+
+        .makeModel {
+          font-size: 20px;
+
+          span {
+            font-size: 10px;
+          }
+        }
+
+        .productType {
+          font-size: 18px;
+        }
+
+        .buyButtons {
+          flex-wrap: wrap;
+        }
+      }
+    }
+
+    .aboutProduct {
+      &__content {
+        .title {
+          font-size: 18px;
+        }
+
+        .description {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

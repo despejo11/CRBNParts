@@ -26,7 +26,7 @@ export default function Header() {
           <Link to='/'>
             <img
               className={styles.logo}
-              src='images/other/Logo.png'
+              src='/images/other/Logo.png'
               alt='Logo'
             />
           </Link>
@@ -36,7 +36,7 @@ export default function Header() {
             }`}
           >
             <Link to='/'>Home</Link>
-            <Link to='/parts'>Parts</Link>
+            <Link to='/shop'>Shop</Link>
             <Link to='/about'>About</Link>
             <Link to='/testimonials'>Testimonials</Link>
             <Link to='/team'>Team</Link>

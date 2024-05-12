@@ -6,8 +6,7 @@ import { ThemeContext } from '../../../app/providers/ThemeProvider'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 
-import { IoLogoInstagram } from 'react-icons/io5'
-import { IoIosArrowUp } from 'react-icons/io'
+import { IoLogoInstagram, IoArrowUpOutline } from 'react-icons/io5'
 import { FaFacebookSquare } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
@@ -87,7 +86,7 @@ export default function Footer() {
               theme === 'dark' ? styles.darkContent : ''
             }`}
           >
-            <img src='images/other/Logo.png' alt='Logo' />
+            <img src='/images/other/Logo.png' alt='Logo' />
             <div>
               <p className={styles.description}>
                 CRBNParts are independent car parts, our company does not
@@ -106,7 +105,7 @@ export default function Footer() {
                 theme === 'dark' ? styles.darkScrollButton : ''
               }`}
             >
-              <IoIosArrowUp />
+              <IoArrowUpOutline />
             </button>
           </div>
         </div>

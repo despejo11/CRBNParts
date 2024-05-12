@@ -1,0 +1,94 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 100px;
+
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 90px;
+
+    .product {
+      width: 280px;
+
+      img {
+        border-radius: 20px;
+        width: 280px;
+        height: 300px;
+        object-fit: cover;
+        box-shadow: $b-sh;
+      }
+
+      .makeModel {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 22px;
+        color: $gray;
+
+        span {
+          font-size: 12px;
+          color: $gray-h;
+        }
+      }
+
+      .productType {
+        margin-top: 5px;
+        font-size: 15px;
+        text-align: center;
+        color: $gray;
+      }
+
+      .price {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 18px;
+        color: $gray;
+      }
+
+      .buttons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .view {
+          @include round-btn($blue, $white-a, 18px, 8px);
+          @include hover-btn($blue-h);
+          @include active-btn($blue-a);
+          @include media-btn($blue);
+        }
+
+        .addToCart {
+          @include round-btn($violet, $white-a, 18px, 8px);
+          @include hover-btn($violet-h);
+          @include active-btn($violet-a);
+          @include media-btn($violet);
+        }
+      }
+    }
+  }
+}
+
+.darkContent {
+  .products {
+    .product {
+      .makeModel {
+        color: $white-h;
+
+        span {
+          color: $white;
+        }
+      }
+
+      .productType {
+        color: $white-h;
+      }
+
+      .price {
+        color: $white-h;
+      }
+    }
+  }
+}

@@ -67,7 +67,7 @@ export default function ContactForm() {
   return (
     <div className={styles.content}>
       <div className={styles.content__form}>
-        <img src='images/other/Contact.png' alt='Carbon Fiber Figure' />
+        <img src='/images/other/Contact.png' alt='Carbon Fiber Figure' />
         <form
           id='form'
           className={theme === 'dark' ? styles.darkForm : ''}

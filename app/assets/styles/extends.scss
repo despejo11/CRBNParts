@@ -43,6 +43,13 @@
   text-wrap: balance;
 }
 
+%availability {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 %submit-successful-btn {
   cursor: auto;
   opacity: 0.5;

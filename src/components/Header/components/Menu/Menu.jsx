@@ -53,7 +53,7 @@ export default function Menu() {
           }`}
         >
           <Link to='/'>Home</Link>
-          <Link to='/parts'>Parts</Link>
+          <Link to='/shop'>Shop</Link>
           <Link to='/about'>About</Link>
           <Link to='/testimonials'>Testimonials</Link>
           <Link to='/team'>Team</Link>

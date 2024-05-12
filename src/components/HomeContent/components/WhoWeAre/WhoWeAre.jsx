@@ -19,7 +19,7 @@ export default function WhoWeAre() {
           <p className={styles.title}>Who we are?</p>
           <p className={styles.description}>
             Looking for carbon fiber car parts for your vehicle? You've come to
-            the right place! We offer a variety of options including bumpers,
+            the right place! We offer a variety of options including mirrors,
             splitters, hoods, and more.
           </p>
           <Link to='/about'>
@@ -28,7 +28,7 @@ export default function WhoWeAre() {
         </div>
         <img
           className={styles.image}
-          src='images/other/HomeContent.png'
+          src='/images/other/HomeContent.png'
           alt='Carbon Fiber Figure'
         />
       </div>

@@ -1,0 +1,84 @@
+@import '/index.scss';
+
+.content {
+  .flex {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 90px;
+    justify-content: center;
+
+    .product {
+      width: 280px;
+      position: relative;
+
+      .border {
+        @include product-border($gray);
+      }
+
+      @extend %product-img;
+
+      @extend %product-text;
+
+      @extend %product-btn;
+    }
+  }
+
+  .titleRecommended {
+    margin-top: 150px;
+    font-size: 45px;
+    color: $gray;
+  }
+
+  .titledRecommended {
+    margin-top: 10px;
+    font-size: 17px;
+    color: $gray-h;
+  }
+}
+
+.darkContent {
+  .flex {
+    .product {
+      .border {
+        @include product-border($white);
+      }
+
+      .makeModel {
+        color: $white-h;
+
+        span {
+          color: $white;
+        }
+      }
+
+      .productType {
+        color: $white-h;
+      }
+
+      .price {
+        color: $white-h;
+      }
+    }
+  }
+
+  .titleRecommended {
+    color: $white-h;
+  }
+
+  .titledRecommended {
+    color: $white;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    .titleRecommended {
+      font-size: 30px;
+    }
+
+    .titledRecommended {
+      font-size: 14px;
+    }
+  }
+}

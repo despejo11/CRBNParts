@@ -1,0 +1,104 @@
+@import '/index.scss';
+
+.content {
+  margin-bottom: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 20px;
+  @include card($bg-card-l);
+
+  img {
+    width: 150px;
+    position: absolute;
+    z-index: -1;
+    left: 200px;
+  }
+
+  .inputPrice {
+    width: 150px;
+    @include input(
+      $white-h,
+      $gray,
+      $white,
+      14px,
+      18px,
+      8px,
+      $gray,
+      #9f9f9f,
+      $white
+    );
+
+    &[type='number']::-webkit-inner-spin-button,
+    &[type='number']::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  input {
+    width: 200px;
+    @include input(
+      $white-h,
+      $gray,
+      $white,
+      14px,
+      18px,
+      8px,
+      $gray,
+      #9f9f9f,
+      $white
+    );
+  }
+
+  button {
+    @include round-btn($red-a, $white-a, 24px, 6px);
+    @include hover-btn($red-h);
+    @include active-btn($red);
+    @include media-btn($red-a);
+  }
+}
+
+.darkContent {
+  @include card($bg-card-d);
+
+  .inputPrice {
+    @include input(
+      $white-h-alt,
+      $gray,
+      $white-a-alt,
+      14px,
+      18px,
+      8px,
+      $white-h,
+      #828282,
+      $gray
+    );
+  }
+
+  input {
+    @include input(
+      $white-h-alt,
+      $gray,
+      $white-a-alt,
+      14px,
+      18px,
+      8px,
+      $white-h,
+      #828282,
+      $gray
+    );
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    justify-content: left;
+
+    img {
+      left: 120px;
+    }
+  }
+}

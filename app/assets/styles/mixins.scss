@@ -88,3 +88,8 @@
     }
   }
 }
+
+@mixin product-border($color) {
+  @extend %product-border;
+  border: 2px solid #{$color};
+}

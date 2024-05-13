@@ -62,3 +62,95 @@
 %submit-successful-input {
   opacity: 0.5;
 }
+
+%product-border {
+  border-radius: 20px;
+  width: 250px;
+  height: 420px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+%product-img {
+  img {
+    border-radius: 20px;
+    width: 280px;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: $b-sh;
+    transition: $tr-btn;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+
+    &:active {
+      filter: brightness(60%);
+    }
+
+    @media (max-width: 1000px) {
+      &:hover {
+        filter: brightness(100%);
+      }
+
+      &:active {
+        filter: brightness(100%);
+      }
+    }
+  }
+}
+
+%product-text {
+  .makeModel {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 20px;
+    color: $gray;
+
+    span {
+      font-size: 11px;
+      color: $gray-h;
+    }
+  }
+
+  .productType {
+    margin-top: 5px;
+    font-size: 15px;
+    text-align: center;
+    color: $gray;
+  }
+
+  .price {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: $gray;
+  }
+}
+
+%product-btn {
+  .buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    .view {
+      @include round-btn($blue, $white-a, 18px, 8px);
+      @include hover-btn($blue-h);
+      @include active-btn($blue-a);
+      @include media-btn($blue);
+    }
+
+    .addToCart {
+      @include round-btn($violet, $white-a, 18px, 8px);
+      @include hover-btn($violet-h);
+      @include active-btn($violet-a);
+      @include media-btn($violet);
+    }
+  }
+}

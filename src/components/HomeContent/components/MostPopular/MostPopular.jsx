@@ -4,6 +4,8 @@ import { ThemeContext } from '../../../../../app/providers/ThemeProvider'
 import { useContext } from 'react'
 import { useState } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import { quantum } from 'ldrs'
 quantum.register()
 
@@ -93,7 +95,9 @@ export default function MostPopular() {
                       Ferrari{' '}
                       <span className={styles.model}>812 Superfast</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
@@ -105,7 +109,9 @@ export default function MostPopular() {
                       Ferrari{' '}
                       <span className={styles.model}>SF90 Stradale</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
@@ -116,7 +122,9 @@ export default function MostPopular() {
                     <p>
                       Ferrari <span className={styles.model}>488 Pista</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                 </div>
               ) : null}
@@ -131,7 +139,9 @@ export default function MostPopular() {
                     <p>
                       Porsche <span className={styles.model}>911 GT3 RS</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
@@ -143,7 +153,9 @@ export default function MostPopular() {
                       Porsche{' '}
                       <span className={styles.model}>Taycan Turbo S</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
@@ -154,7 +166,9 @@ export default function MostPopular() {
                     <p>
                       Porsche <span className={styles.model}>911 Turbo S</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                 </div>
               ) : null}
@@ -170,7 +184,9 @@ export default function MostPopular() {
                       Lamborghini{' '}
                       <span className={styles.model}>Aventador SVJ</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
@@ -181,7 +197,9 @@ export default function MostPopular() {
                     <p>
                       Lamborghini <span className={styles.model}>Urus</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
@@ -193,7 +211,9 @@ export default function MostPopular() {
                       Lamborghini{' '}
                       <span className={styles.model}>Huracan STO</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                 </div>
               ) : null}
@@ -208,7 +228,9 @@ export default function MostPopular() {
                     <p>
                       McLaren <span className={styles.model}>765LT</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
@@ -220,7 +242,9 @@ export default function MostPopular() {
                       Mercedes-Benz{' '}
                       <span className={styles.model}>E63S AMG</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
                     <img
@@ -231,7 +255,9 @@ export default function MostPopular() {
                     <p>
                       BMW <span className={styles.model}>M8 Competition</span>
                     </p>
-                    <button>Shop Now</button>
+                    <Link to='/shop'>
+                      <button>Shop Now</button>
+                    </Link>
                   </div>
                 </div>
               ) : null}

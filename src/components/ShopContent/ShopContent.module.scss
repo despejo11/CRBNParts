@@ -3,6 +3,12 @@
 .content {
   margin-top: 100px;
 
+  .nothingFound {
+    font-size: 20px;
+    text-align: center;
+    color: $gray;
+  }
+
   .products {
     display: flex;
     flex-wrap: wrap;
@@ -11,69 +17,55 @@
 
     .product {
       width: 280px;
+      position: relative;
 
-      img {
-        border-radius: 20px;
-        width: 280px;
-        height: 300px;
-        object-fit: cover;
-        box-shadow: $b-sh;
+      .border {
+        @include product-border($gray);
       }
 
-      .makeModel {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 22px;
-        color: $gray;
+      @extend %product-img;
 
-        span {
-          font-size: 12px;
-          color: $gray-h;
-        }
-      }
+      @extend %product-text;
 
-      .productType {
-        margin-top: 5px;
-        font-size: 15px;
-        text-align: center;
-        color: $gray;
-      }
-
-      .price {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 18px;
-        color: $gray;
-      }
-
-      .buttons {
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-
-        .view {
-          @include round-btn($blue, $white-a, 18px, 8px);
-          @include hover-btn($blue-h);
-          @include active-btn($blue-a);
-          @include media-btn($blue);
-        }
-
-        .addToCart {
-          @include round-btn($violet, $white-a, 18px, 8px);
-          @include hover-btn($violet-h);
-          @include active-btn($violet-a);
-          @include media-btn($violet);
-        }
-      }
+      @extend %product-btn;
     }
+  }
+
+  .loadMoreButton {
+    width: 160px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+    @include hover-btn($blue-h);
+    @include active-btn($blue-a);
+    @include media-btn($blue);
+  }
+
+  .isLoadingBtn {
+    opacity: 0.5;
+    cursor: auto;
+    @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+    @include hover-btn($blue);
+    @include active-btn($blue);
+    @include media-btn($blue);
   }
 }
 
 .darkContent {
+  .nothingFound {
+    color: $white-h;
+  }
+
   .products {
     .product {
+      .border {
+        @include product-border($white);
+      }
+
       .makeModel {
         color: $white-h;
 

@@ -1,15 +1,32 @@
 import styles from './ShopContent.module.scss'
+import FilterProducts from './components/FilterProducts/FilterProducts'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
-import { products } from '../ProductDetailsContent/Products'
+import { Products } from '../ProductDetailsContent/Products'
 
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { IoIosEye } from 'react-icons/io'
 import { FaCartPlus } from 'react-icons/fa'
 
+import { quantum } from 'ldrs'
+quantum.register()
+
 export default function ShopContent() {
   const [theme] = useContext(ThemeContext)
+
+  const [visibleProducts, setVisibleProducts] = useState(9)
+  const [loading, setLoading] = useState(false)
+  const [filteredProducts, setFilteredProducts] = useState(Products)
+  const [filterMessage, setFilterMessage] = useState('')
+
+  const loadMoreProducts = () => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      setVisibleProducts((prevVisibleProducts) => prevVisibleProducts + 9)
+    }, 2000)
+  }
 
   return (
     <div
@@ -18,10 +35,22 @@ export default function ShopContent() {
       }`}
     >
       <div className='container'>
+        <FilterProducts
+          products={Products}
+          setFilteredProducts={setFilteredProducts}
+          setFilterMessage={setFilterMessage}
+        />
+
+        {filterMessage && (
+          <p className={styles.nothingFound}>{filterMessage}</p>
+        )}
         <div className={styles.products}>
-          {products.map((product) => (
+          {filteredProducts.slice(0, visibleProducts).map((product) => (
             <div className={styles.product} key={product.id}>
-              <img src={product.firstImage} alt={product.alt} />
+              <div className={styles.border}></div>
+              <Link to={`/shop/${product.id}`}>
+                <img src={product.firstImage} alt={product.alt} />
+              </Link>
               <p className={styles.makeModel}>
                 {product.make} <span>{product.model}</span>
               </p>
@@ -41,6 +70,22 @@ export default function ShopContent() {
             </div>
           ))}
         </div>
+
+        {filteredProducts.length > visibleProducts && (
+          <button
+            className={`${styles.loadMoreButton} ${
+              loading ? styles.isLoadingBtn : ''
+            }`}
+            onClick={loadMoreProducts}
+            disabled={loading}
+          >
+            {loading ? (
+              <l-quantum size='15' speed='1.75' color='#e7e7e7'></l-quantum>
+            ) : (
+              'Load More'
+            )}
+          </button>
+        )}
       </div>
     </div>
   )

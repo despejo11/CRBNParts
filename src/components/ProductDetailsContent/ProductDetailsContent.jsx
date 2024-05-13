@@ -1,9 +1,10 @@
 import styles from './ProductDetailsContent.module.scss'
+import RecommendedProducts from './components/RecommendedProducts/RecommendedProducts'
+import { Products } from './Products'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
-import { products } from './Products'
 
-import { useState, useContext, useRef } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useState, useContext, useRef, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 
 import { FaApple, FaCartPlus } from 'react-icons/fa'
 import {
@@ -21,12 +22,17 @@ export default function ProductDetailsContent() {
   const [theme] = useContext(ThemeContext)
 
   const { id } = useParams()
-  const product = products.find((p) => p.id === Number(id))
+  const product = Products.find((p) => p.id === Number(id))
 
   const [quantity, setQuantity] = useState(1)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
 
   const animImage = useRef()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    setQuantity(1)
+  }, [id])
 
   const changeImage = (newIndex) => {
     if (newIndex !== activeImageIndex) {
@@ -58,9 +64,9 @@ export default function ProductDetailsContent() {
       }`}
     >
       <div className='container'>
-        <Link className={styles.backToShop} to='/shop'>
+        <button className={styles.backToShop} onClick={() => navigate(-1)}>
           <IoArrowBackOutline />
-        </Link>
+        </button>
 
         <div className={styles.flex}>
           <div className={styles.images}>
@@ -189,6 +195,7 @@ export default function ProductDetailsContent() {
             <p className={styles.description}>{product.installation}</p>
           </div>
         </div>
+        <RecommendedProducts />
       </div>
     </div>
   )

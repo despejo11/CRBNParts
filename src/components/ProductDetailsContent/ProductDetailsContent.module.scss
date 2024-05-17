@@ -245,6 +245,10 @@
       }
     }
   }
+
+  .popupContent {
+    @extend %popup-content;
+  }
 }
 
 .darkContent {
@@ -340,6 +344,16 @@
       .description {
         color: $white;
       }
+    }
+  }
+
+  .popupContent {
+    .title {
+      color: $white-h;
+    }
+
+    .titled {
+      color: $white;
     }
   }
 }

@@ -7,13 +7,14 @@
     flex-wrap: wrap;
     gap: 90px;
     justify-content: center;
+    transform: scale(0.9);
 
     .product {
       width: 280px;
       position: relative;
 
       .border {
-        @include product-border($gray);
+        @include product-border($gray-h);
       }
 
       @extend %product-img;

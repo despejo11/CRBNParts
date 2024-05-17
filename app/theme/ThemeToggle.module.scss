@@ -6,11 +6,11 @@
   @include active-btn($gray-a);
   @include media-btn($gray);
   z-index: 1;
+}
 
-  &.dark {
-    @include round-btn($white, $gray, 20px, 7px);
-    @include hover-btn($white-h);
-    @include active-btn($white-a);
-    @include media-btn($white);
-  }
+.darkToggle {
+  @include round-btn($white, $gray, 20px, 7px);
+  @include hover-btn($white-h);
+  @include active-btn($white-a);
+  @include media-btn($white);
 }

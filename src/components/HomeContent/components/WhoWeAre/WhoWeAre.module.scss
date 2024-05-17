@@ -8,9 +8,6 @@
   gap: 50px;
 
   &__text {
-    display: flex;
-    flex-direction: column;
-
     .title {
       @extend %title;
     }

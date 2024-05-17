@@ -6,7 +6,6 @@ import { useParams, Link } from 'react-router-dom'
 import { useContext } from 'react'
 
 import { IoIosEye } from 'react-icons/io'
-import { FaCartPlus } from 'react-icons/fa'
 
 export default function RecommendedProduct() {
   const [theme] = useContext(ThemeContext)
@@ -61,10 +60,6 @@ export default function RecommendedProduct() {
                   <IoIosEye />
                 </button>
               </Link>
-
-              <button className={styles.addToCart}>
-                <FaCartPlus />
-              </button>
             </div>
           </div>
         ))}

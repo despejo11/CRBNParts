@@ -7,8 +7,20 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  padding-bottom: 40px;
   gap: 20px;
   @include card($bg-card-l);
+
+  .selected {
+    position: absolute;
+    bottom: 11px;
+    font-size: 14px;
+    color: $gray;
+
+    span {
+      color: $gray-h;
+    }
+  }
 
   img {
     width: 150px;
@@ -63,6 +75,14 @@
 
 .darkContent {
   @include card($bg-card-d);
+
+  .selected {
+    color: $white-h;
+
+    span {
+      color: $white;
+    }
+  }
 
   .inputPrice {
     @include input(

@@ -1,0 +1,37 @@
+@import '/index.scss';
+
+.content {
+  .title {
+    font-size: 45px;
+    color: $gray;
+  }
+
+  .titled {
+    margin-top: 10px;
+    font-size: 17px;
+    color: $gray-h;
+    text-wrap: balance;
+  }
+}
+
+.darkContent {
+  .title {
+    color: $white-h;
+  }
+
+  .titled {
+    color: $white;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    .title {
+      font-size: 35px;
+    }
+
+    .titled {
+      font-size: 15px;
+    }
+  }
+}

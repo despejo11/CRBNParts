@@ -154,3 +154,282 @@
     }
   }
 }
+
+%popup-content {
+  .title {
+    font-size: 35px;
+    color: $gray;
+  }
+
+  .titled {
+    font-size: 15px;
+    color: $gray-h;
+    text-wrap: balance;
+  }
+
+  button {
+    margin: auto;
+    margin-top: 20px;
+    @include round-btn($blue, $white-a, 25px, 10px);
+    @include hover-btn($blue-h);
+    @include active-btn($blue-a);
+    @include media-btn($blue);
+  }
+}
+
+%sign-up-in {
+  .back {
+    @include round-btn($gray, $white, 28px, 8px);
+    @include hover-btn($gray-h);
+    @include active-btn($gray-a);
+    @include media-btn($gray);
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 50px;
+  }
+
+  .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .inner {
+      @include card($bg-card-l);
+      padding-block: 50px;
+      max-width: 710px;
+
+      .question {
+        font-size: 13px;
+        text-align: center;
+        margin-top: 40px;
+        color: $gray;
+        text-wrap: balance;
+
+        a {
+          color: $violet;
+          cursor: pointer;
+          transition: $tr-btn;
+          text-decoration: none;
+
+          &:hover {
+            color: $violet-h;
+          }
+
+          &:active {
+            color: $violet-a;
+          }
+
+          @media (max-width: 1000px) {
+            &:hover {
+              color: $violet;
+            }
+
+            &:active {
+              color: $violet;
+            }
+          }
+        }
+      }
+    }
+
+    .title {
+      font-size: 60px;
+      color: $gray;
+    }
+
+    .titled {
+      margin-top: 10px;
+      color: $gray-h;
+      font-size: 17px;
+      text-wrap: balance;
+      margin-bottom: 40px;
+    }
+
+    img {
+      width: 70px;
+      margin: auto;
+      margin-bottom: 10px;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+
+        .input {
+          position: relative;
+
+          input {
+            width: 300px;
+            @include input(
+              $white-h,
+              $gray,
+              $white,
+              17px,
+              20px,
+              10px,
+              $gray,
+              #9f9f9f,
+              $white
+            );
+          }
+
+          .submitSuccessfulInput {
+            opacity: 0.5;
+          }
+
+          .error {
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            color: $red-a;
+            gap: 4px;
+            font-size: 14px;
+
+            svg {
+              font-size: 20px;
+              color: $red;
+            }
+          }
+
+          button {
+            position: absolute;
+            right: 10px;
+            top: 9.5px;
+            @include round-btn($violet, $white-a, 16px, 5px);
+            @include hover-btn($violet-h);
+            @include active-btn($violet-a);
+            @include media-btn($violet);
+          }
+        }
+      }
+
+      .submit {
+        width: 160px;
+        height: 40px;
+        @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+        @include hover-btn($blue-h);
+        @include active-btn($blue-a);
+        @include media-btn($blue);
+      }
+
+      .submitSuccessfulBtn {
+        opacity: 0.5;
+        cursor: auto;
+        @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+        @include hover-btn($blue);
+        @include active-btn($blue);
+        @include media-btn($blue);
+      }
+    }
+  }
+}
+
+.darkContent {
+  .back {
+    @include round-btn($white, $gray, 28px, 8px);
+    @include hover-btn($white-h);
+    @include active-btn($white-a);
+    @include media-btn($white);
+  }
+
+  .form {
+    .inner {
+      @include card($bg-card-d);
+
+      .question {
+        color: $white-h;
+
+        a {
+          color: $violet-a;
+
+          &:hover {
+            color: $violet-h;
+          }
+
+          &:active {
+            color: $violet;
+          }
+
+          @media (max-width: 1000px) {
+            &:hover {
+              color: $violet-a;
+            }
+
+            &:active {
+              color: $violet-a;
+            }
+          }
+        }
+      }
+    }
+
+    .title {
+      font-size: 60px;
+      color: $white-h;
+    }
+
+    .titled {
+      color: $white;
+    }
+
+    .flex {
+      form {
+        .input {
+          input {
+            @include input(
+              $white-h-alt,
+              $gray,
+              $white-a-alt,
+              17px,
+              20px,
+              10px,
+              $white-h,
+              #828282,
+              $gray
+            );
+          }
+
+          .error {
+            color: $red;
+
+            svg {
+              color: $red-h;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    .form {
+      .title {
+        font-size: 35px;
+      }
+
+      .titled {
+        font-size: 15px;
+      }
+
+      .flex {
+        form {
+          .input {
+            input {
+              width: 210px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

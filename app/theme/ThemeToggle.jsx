@@ -15,7 +15,9 @@ export default function ThemeToggle() {
   return (
     <>
       <button
-        className={`${styles.toggle} ${theme === 'dark' ? styles.dark : ''}`}
+        className={`${styles.toggle} ${
+          theme === 'dark' ? styles.darkToggle : ''
+        }`}
         onClick={changeTheme}
       >
         {theme === 'light' ? <BsSun /> : <BsMoonStars />}

@@ -1,0 +1,74 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 100px;
+
+  .buttons {
+    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    button {
+      @include regular-btn(transparent, $blue, 17px, 15px, 5px);
+      @include hover-btn(transparent, $blue-h);
+      @include active-btn(transparent, $blue-a);
+      @include media-btn(transparent, $blue);
+      box-shadow: none;
+      letter-spacing: 2.2px;
+    }
+
+    .activeButton {
+      @include regular-btn($blue, $white-a, 17px, 15px, 5px);
+      @include hover-btn($blue, $white-a);
+      @include active-btn($blue, $white-a);
+      @include media-btn($blue, $white-a);
+    }
+
+    p {
+      color: $gray;
+    }
+  }
+
+  .loading {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+  }
+
+  .warning {
+    font-size: 11px;
+    color: $gray;
+    text-align: center;
+    margin-top: 100px;
+    text-wrap: balance;
+  }
+}
+
+.darkContent {
+  .buttons {
+    button {
+      @include regular-btn(transparent, $blue-a, 17px, 15px, 5px);
+      @include hover-btn(transparent, $blue-h);
+      @include active-btn(transparent, $blue);
+      @include media-btn(transparent, $blue-a);
+    }
+
+    .activeButton {
+      @include regular-btn($blue-h, $white-a, 17px, 15px, 5px);
+      @include hover-btn($blue-h, $white-a);
+      @include active-btn($blue-h, $white-a);
+      @include media-btn($blue-h, $white-a);
+    }
+
+    p {
+      color: $white-h;
+    }
+  }
+
+  .warning {
+    color: $white-h;
+  }
+}

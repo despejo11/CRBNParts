@@ -1,0 +1,61 @@
+@import '/index.scss';
+
+.content {
+  .button {
+    margin: auto;
+    display: flex;
+    margin-top: 100px;
+    @include regular-btn($red-a, $white-a, 17px, 20px, 10px);
+    @include hover-btn($red-h);
+    @include active-btn($red);
+    @include media-btn($red-a);
+  }
+
+  .popup {
+    .title {
+      color: $gray;
+      font-size: 35px;
+    }
+
+    .titled {
+      color: $gray-h;
+      text-wrap: balance;
+      font-size: 15px;
+    }
+
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      margin-top: 30px;
+      height: 40px;
+      width: 90px;
+      @include regular-btn($green, $white-a, 17px, 20px, 10px);
+      @include hover-btn($green-h);
+      @include active-btn($green-a);
+      @include media-btn($green);
+    }
+
+    .isLoading {
+      cursor: auto;
+      opacity: 0.5;
+      @include regular-btn($green, $white-a, 17px, 20px, 10px);
+      @include hover-btn($green);
+      @include active-btn($green);
+      @include media-btn($green);
+    }
+  }
+}
+
+.darkContent {
+  .popup {
+    .title {
+      color: $white-h;
+    }
+
+    .titled {
+      color: $white;
+    }
+  }
+}

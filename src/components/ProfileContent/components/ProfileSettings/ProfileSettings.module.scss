@@ -1,0 +1,198 @@
+@import '/index.scss';
+
+.content {
+  .title {
+    font-size: 45px;
+    color: $gray;
+  }
+
+  .titled {
+    margin-top: 10px;
+    font-size: 17px;
+    color: $gray-h;
+    text-wrap: balance;
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    @include card($bg-card-l);
+    padding-bottom: 70px;
+    position: relative;
+
+    form {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+
+      .input {
+        position: relative;
+
+        input {
+          width: 300px;
+          @include input(
+            $white-h,
+            $gray,
+            $white,
+            17px,
+            20px,
+            10px,
+            $gray,
+            #9f9f9f,
+            $white
+          );
+        }
+
+        .disabledInput {
+          @extend %submit-successful-input;
+        }
+
+        .error {
+          margin-top: 5px;
+          display: flex;
+          align-items: center;
+          position: absolute;
+          color: $red-a;
+          gap: 4px;
+          font-size: 14px;
+
+          svg {
+            font-size: 20px;
+            color: $red;
+          }
+        }
+
+        button {
+          position: absolute;
+          right: 10px;
+          top: 9.5px;
+          @include round-btn($violet, $white-a, 16px, 5px);
+          @include hover-btn($violet-h);
+          @include active-btn($violet-a);
+          @include media-btn($violet);
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      position: absolute;
+      bottom: 0px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .edit {
+        width: 33px;
+        height: 33px;
+        @include round-btn($violet, $white-a, 22px, 6px);
+        @include hover-btn($violet-h);
+        @include active-btn($violet-a);
+        @include media-btn($violet);
+      }
+
+      .save {
+        width: 33px;
+        height: 33px;
+        @include round-btn($green, $white-a, 22px, 6px);
+        @include hover-btn($green-h);
+        @include active-btn($green-a);
+        @include media-btn($green);
+      }
+
+      .cancel {
+        width: 33px;
+        height: 33px;
+        @include round-btn($red-a, $white-a, 22px, 6px);
+        @include hover-btn($red-h);
+        @include active-btn($red);
+        @include media-btn($red-a);
+      }
+
+      .isLoadingSave {
+        cursor: auto;
+        opacity: 0.5;
+        @include round-btn($green, $white-a, 22px, 6px);
+        @include hover-btn($green);
+        @include active-btn($green);
+        @include media-btn($green);
+      }
+
+      .isLoadingCancel {
+        cursor: auto;
+        opacity: 0.5;
+        @include round-btn($red, $white-a, 22px, 6px);
+        @include hover-btn($red);
+        @include active-btn($red);
+        @include media-btn($red);
+      }
+    }
+  }
+}
+
+.darkContent {
+  .title {
+    color: $white-h;
+  }
+
+  .titled {
+    color: $white;
+  }
+
+  .flex {
+    @include card($bg-card-d);
+
+    form {
+      .input {
+        input {
+          @include input(
+            $white-h-alt,
+            $gray,
+            $white-a-alt,
+            17px,
+            20px,
+            10px,
+            $white-h,
+            #828282,
+            $gray
+          );
+        }
+
+        .error {
+          color: $red;
+
+          svg {
+            color: $red-h;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    .title {
+      font-size: 35px;
+    }
+
+    .titled {
+      font-size: 15px;
+    }
+
+    .flex {
+      form {
+        .input {
+          input {
+            width: 210px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -6,11 +6,16 @@ import { ThemeContext } from '../../../app/providers/ThemeProvider'
 
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
+import { useSelector } from 'react-redux'
 
 import { BsDoorOpen } from 'react-icons/bs'
+import { FaUser } from 'react-icons/fa'
 
 export default function Header() {
   const [theme] = useContext(ThemeContext)
+
+  const isRegistered = useSelector((state) => state.user.isRegistered)
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
 
   return (
     <header
@@ -44,9 +49,18 @@ export default function Header() {
           </div>
           <div className={styles.buttons}>
             <ThemeToggle />
-            <button className={styles.sign}>
-              <BsDoorOpen />
-            </button>
+            {!isLoggedIn && (
+              <Link to={isRegistered ? '/signin' : '/signup'}>
+                <button className={styles.sign}>
+                  <BsDoorOpen />
+                </button>
+              </Link>
+            )}
+            {isLoggedIn && (
+              <Link to='/profile' className={styles.user}>
+                <FaUser />
+              </Link>
+            )}
           </div>
         </div>
       </div>

@@ -16,6 +16,9 @@ export default function FilterProducts({
   const [selectedProductType, setSelectedProductType] = useState('')
   const [minPrice, setMinPrice] = useState('')
   const [maxPrice, setMaxPrice] = useState('')
+  const [selectedProductCount, setSelectedProductCount] = useState(
+    products.length
+  )
 
   const handleModelChange = (event) => {
     setSelectedModel(event.target.value)
@@ -102,6 +105,7 @@ export default function FilterProducts({
     }
 
     setFilteredProducts(filtered)
+    setSelectedProductCount(filtered.length)
 
     if (filtered.length === 0) {
       setFilterMessage('Nothing was found for your request.')
@@ -118,6 +122,7 @@ export default function FilterProducts({
     setMaxPrice('')
     setFilterMessage('')
     setFilteredProducts(products)
+    setSelectedProductCount(0)
   }
 
   return (
@@ -164,10 +169,12 @@ export default function FilterProducts({
         onChange={handleMaxPriceChange}
         placeholder='Max Price'
       />
-
       <button onClick={clearFilters}>
         <IoClose />
       </button>
+      <p className={styles.selected}>
+        Selected products: <span>{selectedProductCount}</span>
+      </p>
     </div>
   )
 }

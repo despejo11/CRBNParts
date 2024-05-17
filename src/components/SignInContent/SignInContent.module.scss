@@ -1,0 +1,33 @@
+@import '/index.scss';
+
+.content {
+  margin: auto;
+  padding: 15px;
+  padding-block: 50px;
+  max-width: 1200px;
+
+  @extend %sign-up-in;
+
+  .invalidError {
+    display: flex;
+    align-items: center;
+    color: $red-a;
+    gap: 4px;
+    font-size: 14px;
+
+    svg {
+      font-size: 20px;
+      color: $red;
+    }
+  }
+}
+
+.darkContent {
+  .invalidError {
+    color: $red;
+
+    svg {
+      color: $red-h;
+    }
+  }
+}

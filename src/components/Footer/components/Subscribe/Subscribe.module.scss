@@ -65,10 +65,10 @@
         .cancel {
           position: absolute;
           right: 10px;
-          @include round-btn($red, $white-a, 16px, 5px);
+          @include round-btn($red-a, $white-a, 16px, 5px);
           @include hover-btn($red-h);
-          @include active-btn($red-a);
-          @include media-btn($red);
+          @include active-btn($red);
+          @include media-btn($red-a);
         }
       }
 

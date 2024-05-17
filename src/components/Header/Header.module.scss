@@ -115,6 +115,13 @@
       }
     }
   }
+
+  .user {
+    @include round-btn($violet, $white-a, 25px, 10px);
+    @include hover-btn($violet-h);
+    @include active-btn($violet-a);
+    @include media-btn($violet);
+  }
 }
 
 .darkHeader {

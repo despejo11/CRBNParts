@@ -1,0 +1,10 @@
+@import '/index.scss';
+
+.content {
+  margin: auto;
+  padding: 15px;
+  padding-block: 50px;
+  max-width: 1200px;
+
+  @extend %sign-up-in;
+}

@@ -20,7 +20,7 @@
       position: relative;
 
       .border {
-        @include product-border($gray);
+        @include product-border($gray-h);
       }
 
       @extend %product-img;
@@ -53,6 +53,10 @@
     @include active-btn($blue);
     @include media-btn($blue);
   }
+
+  .popupContent {
+    @extend %popup-content;
+  }
 }
 
 .darkContent {
@@ -81,6 +85,16 @@
       .price {
         color: $white-h;
       }
+    }
+  }
+
+  .popupContent {
+    .title {
+      color: $white-h;
+    }
+
+    .titled {
+      color: $white;
     }
   }
 }

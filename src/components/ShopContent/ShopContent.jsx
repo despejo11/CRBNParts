@@ -1,19 +1,26 @@
 import styles from './ShopContent.module.scss'
 import FilterProducts from './components/FilterProducts/FilterProducts'
+import Popup from '../Popup/Popup'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 import { Products } from '../ProductDetailsContent/Products'
 
 import { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import { IoIosEye } from 'react-icons/io'
 import { FaCartPlus } from 'react-icons/fa'
+import { BsDoorOpen } from 'react-icons/bs'
 
 import { quantum } from 'ldrs'
 quantum.register()
 
 export default function ShopContent() {
   const [theme] = useContext(ThemeContext)
+  const [openPopup, setOpenPopup] = useState()
+
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
+  const isRegistered = useSelector((state) => state.user.isRegistered)
 
   const [visibleProducts, setVisibleProducts] = useState(9)
   const [loading, setLoading] = useState(false)
@@ -63,7 +70,14 @@ export default function ShopContent() {
                     <IoIosEye />
                   </button>
                 </Link>
-                <button className={styles.addToCart}>
+                <button
+                  onClick={() => {
+                    if (!isLoggedIn) {
+                      setOpenPopup(true)
+                    }
+                  }}
+                  className={styles.addToCart}
+                >
                   <FaCartPlus />
                 </button>
               </div>
@@ -85,6 +99,22 @@ export default function ShopContent() {
               'Load More'
             )}
           </button>
+        )}
+        {openPopup && (
+          <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
+            <div className={styles.popupContent}>
+              <p className={styles.title}>Warning!</p>
+              <br />
+              <p className={styles.titled}>
+                First sign up or sign in to your account
+              </p>
+              <Link to={isRegistered ? '/signin' : '/signup'}>
+                <button>
+                  <BsDoorOpen />
+                </button>
+              </Link>
+            </div>
+          </Popup>
         )}
       </div>
     </div>

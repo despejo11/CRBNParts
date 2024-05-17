@@ -1,10 +1,12 @@
 import styles from './ProductDetailsContent.module.scss'
 import RecommendedProducts from './components/RecommendedProducts/RecommendedProducts'
+import Popup from '../Popup/Popup'
 import { Products } from './Products'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 
 import { useState, useContext, useRef, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import { FaApple, FaCartPlus } from 'react-icons/fa'
 import {
@@ -15,22 +17,28 @@ import {
 } from 'react-icons/io5'
 import { HiOutlinePlusSm, HiOutlineMinusSm } from 'react-icons/hi'
 import { FcGoogle } from 'react-icons/fc'
+import { BsDoorOpen } from 'react-icons/bs'
 
 import gsap from 'gsap'
 
 export default function ProductDetailsContent() {
   const [theme] = useContext(ThemeContext)
 
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
+  const isRegistered = useSelector((state) => state.user.isRegistered)
+
   const { id } = useParams()
   const product = Products.find((p) => p.id === Number(id))
 
   const [quantity, setQuantity] = useState(1)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const [openPopup, setOpenPopup] = useState()
 
   const animImage = useRef()
   const navigate = useNavigate()
 
   useEffect(() => {
+    setActiveImageIndex(0)
     setQuantity(1)
   }, [id])
 
@@ -142,7 +150,14 @@ export default function ProductDetailsContent() {
                       <HiOutlinePlusSm />
                     </button>
                   </div>
-                  <button className={styles.addToCart}>
+                  <button
+                    onClick={() => {
+                      if (!isLoggedIn) {
+                        setOpenPopup(true)
+                      }
+                    }}
+                    className={styles.addToCart}
+                  >
                     <FaCartPlus />
                   </button>
                 </div>
@@ -196,6 +211,22 @@ export default function ProductDetailsContent() {
           </div>
         </div>
         <RecommendedProducts />
+        {openPopup && (
+          <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
+            <div className={styles.popupContent}>
+              <p className={styles.title}>Warning!</p>
+              <br />
+              <p className={styles.titled}>
+                First sign up or sign in to your account
+              </p>
+              <Link to={isRegistered ? '/signin' : '/signup'}>
+                <button>
+                  <BsDoorOpen />
+                </button>
+              </Link>
+            </div>
+          </Popup>
+        )}
       </div>
     </div>
   )

@@ -140,6 +140,8 @@
     gap: 20px;
 
     .view {
+      width: 35px;
+      height: 35px;
       @include round-btn($blue, $white-a, 18px, 8px);
       @include hover-btn($blue-h);
       @include active-btn($blue-a);
@@ -147,6 +149,8 @@
     }
 
     .addToCart {
+      width: 35px;
+      height: 35px;
       @include round-btn($violet, $white-a, 18px, 8px);
       @include hover-btn($violet-h);
       @include active-btn($violet-a);
@@ -330,6 +334,21 @@
       }
     }
   }
+
+  .info {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin-top: 15px;
+      color: $gray-h;
+      text-wrap: balance;
+      font-size: 13px;
+    }
+  }
 }
 
 .darkContent {
@@ -406,6 +425,12 @@
           }
         }
       }
+    }
+  }
+
+  .info {
+    p {
+      color: $white;
     }
   }
 }

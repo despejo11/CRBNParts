@@ -52,7 +52,7 @@ export const Products = [
     make: 'McLaren',
     model: '765LT',
     productType: 'Body Kit',
-    price: 15970,
+    price: 9670,
     firstImage: '/images/parts/BodyKitMcLaren765LT.png',
     secondImage: '/images/other/RandomFigureOne.png',
     thirdImage: '/images/other/RandomFigureTwo.png',

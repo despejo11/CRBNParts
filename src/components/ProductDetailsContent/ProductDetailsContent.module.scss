@@ -149,10 +149,27 @@
         }
 
         .addToCart {
+          width: 50px;
+          height: 50px;
           @include round-btn($violet, $white-a, 22px, 12px);
           @include hover-btn($violet-h);
           @include active-btn($violet-a);
           @include media-btn($violet);
+        }
+
+        .added {
+          opacity: 0.5;
+          cursor: auto;
+          pointer-events: none;
+        }
+
+        .removeFromCart {
+          width: 35px;
+          height: 35px;
+          @include round-btn($red-a, $white-a, 18px, 8px);
+          @include hover-btn($red-h);
+          @include active-btn($red);
+          @include media-btn($red-a);
         }
       }
 
@@ -397,7 +414,7 @@
         min-width: 280px;
 
         .makeModel {
-          font-size: 20px;
+          font-size: 19px;
 
           span {
             font-size: 10px;
@@ -405,7 +422,7 @@
         }
 
         .productType {
-          font-size: 18px;
+          font-size: 17px;
         }
 
         .buyButtons {

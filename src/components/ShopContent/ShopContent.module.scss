@@ -28,6 +28,21 @@
       @extend %product-text;
 
       @extend %product-btn;
+
+      .added {
+        opacity: 0.5;
+        cursor: auto;
+        pointer-events: none;
+      }
+
+      .removeFromCart {
+        width: 35px;
+        height: 35px;
+        @include round-btn($red-a, $white-a, 18px, 8px);
+        @include hover-btn($red-h);
+        @include active-btn($red);
+        @include media-btn($red-a);
+      }
     }
   }
 

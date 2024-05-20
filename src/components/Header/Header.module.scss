@@ -113,14 +113,30 @@
         @include active-btn($blue-a);
         @include media-btn($blue);
       }
-    }
-  }
 
-  .user {
-    @include round-btn($violet, $white-a, 25px, 10px);
-    @include hover-btn($violet-h);
-    @include active-btn($violet-a);
-    @include media-btn($violet);
+      .cart {
+        position: relative;
+        @include round-btn($blue, $white-a, 25px, 10px);
+        @include hover-btn($blue-h);
+        @include active-btn($blue-a);
+        @include media-btn($blue);
+
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: -7px;
+          right: -7px;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          font-size: 14px;
+          background-color: $red-a;
+          box-shadow: $b-sh;
+        }
+      }
+    }
   }
 }
 

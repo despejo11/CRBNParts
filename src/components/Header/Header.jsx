@@ -9,13 +9,16 @@ import { useContext } from 'react'
 import { useSelector } from 'react-redux'
 
 import { BsDoorOpen } from 'react-icons/bs'
-import { FaUser } from 'react-icons/fa'
+import { FaShoppingCart } from 'react-icons/fa'
 
 export default function Header() {
   const [theme] = useContext(ThemeContext)
 
   const isRegistered = useSelector((state) => state.user.isRegistered)
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
+
+  const cartItems = useSelector((state) => state.cart.items)
+  const uniqueProductsInCart = cartItems.length
 
   return (
     <header
@@ -46,7 +49,9 @@ export default function Header() {
             <Link to='/testimonials'>Testimonials</Link>
             <Link to='/team'>Team</Link>
             <Link to='/contact'>Contact</Link>
+            {isLoggedIn && <Link to='/profile'>Profile</Link>}
           </div>
+
           <div className={styles.buttons}>
             <ThemeToggle />
             {!isLoggedIn && (
@@ -57,8 +62,9 @@ export default function Header() {
               </Link>
             )}
             {isLoggedIn && (
-              <Link to='/profile' className={styles.user}>
-                <FaUser />
+              <Link to='/cart' className={styles.cart}>
+                <span>{uniqueProductsInCart}</span>
+                <FaShoppingCart />
               </Link>
             )}
           </div>

@@ -1,4 +1,5 @@
 import styles from './SignInContent.module.scss'
+import ThemeToggle from '../../../app/theme/ThemeToggle'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 import { login } from '../../features/user/userSlice'
 
@@ -35,8 +36,8 @@ export default function SignInContent() {
   })
 
   const onSubmit = (data) => {
-    const storedName = localStorage.getItem('userName')
-    const storedPassword = localStorage.getItem('userPassword')
+    const storedName = localStorage.getItem('UserName')
+    const storedPassword = localStorage.getItem('UserPassword')
 
     setLoading(true)
 
@@ -178,6 +179,11 @@ export default function SignInContent() {
             Not signed in yet? <Link to='/signup'>Sign up</Link>
           </p>
         </div>
+      </div>
+
+      <div className={styles.info}>
+        <ThemeToggle />
+        <p>© 2024 CRBNParts, all rights reserved.</p>
       </div>
     </div>
   )

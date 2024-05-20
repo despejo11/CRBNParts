@@ -1,0 +1,544 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 100px;
+
+  .emptyCart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-wrap: balance;
+    text-align: center;
+    color: $gray;
+    font-size: 18px;
+
+    .goToShop {
+      margin-top: 20px;
+      font-size: 14px;
+      color: $gray-h;
+
+      a {
+        color: $violet;
+        cursor: pointer;
+        transition: $tr-btn;
+        text-decoration: none;
+
+        &:hover {
+          color: $violet-h;
+        }
+
+        &:active {
+          color: $violet-a;
+        }
+
+        @media (max-width: 1000px) {
+          &:hover {
+            color: $violet;
+          }
+
+          &:active {
+            color: $violet;
+          }
+        }
+      }
+    }
+  }
+
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 100px;
+
+    .order {
+      position: sticky;
+      top: 50px;
+      flex: 1;
+      @include card($bg-card-l);
+
+      .description {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p {
+          color: $gray;
+          font-size: 14px;
+
+          span {
+            color: $gray-h;
+          }
+        }
+
+        .totalPrice {
+          margin-top: 10px;
+          font-size: 22px;
+        }
+      }
+
+      .buyButtons {
+        margin-top: 30px;
+
+        .google {
+          @include regular-btn($blue, $white-a, 17px, 23px, 13px);
+          @include hover-btn($blue-h);
+          @include active-btn($blue-a);
+          @include media-btn($blue);
+
+          svg {
+            color: $white;
+          }
+        }
+
+        .apple {
+          margin-top: 20px;
+          @include regular-btn($gray, $white, 17px, 23px, 13px);
+          @include hover-btn($gray-h);
+          @include active-btn($gray-a);
+          @include media-btn($gray);
+
+          svg {
+            color: $white-a;
+          }
+        }
+      }
+
+      .warning {
+        margin-top: 20px;
+        font-size: 11px;
+        color: $gray-h;
+        text-wrap: balance;
+      }
+
+      .info {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p {
+          align-items: center;
+          display: flex;
+          text-wrap: balance;
+          gap: 5px;
+          color: $gray-h;
+          font-size: 13px;
+
+          svg {
+            color: $gray;
+          }
+        }
+      }
+    }
+
+    .items {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      margin-right: 40px;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        .border {
+          border: 2px solid $gray-h;
+          width: 670px;
+          height: 150px;
+          position: absolute;
+          border-radius: 20px;
+          z-index: -1;
+        }
+
+        .linkImage {
+          position: relative;
+
+          img {
+            border-radius: 20px;
+            width: 160px;
+            height: 180px;
+            object-fit: cover;
+            box-shadow: $b-sh;
+            z-index: 1;
+            cursor: pointer;
+            transition: $tr-btn;
+
+            &:hover {
+              filter: brightness(80%);
+            }
+
+            &:active {
+              filter: brightness(60%);
+            }
+
+            @media (max-width: 1000px) {
+              &:hover {
+                filter: brightness(100%);
+              }
+
+              &:active {
+                filter: brightness(100%);
+              }
+            }
+          }
+
+          button {
+            position: absolute;
+            bottom: -7px;
+            right: -7px;
+            @include round-btn($blue, $white-a, 18px, 8px);
+            @include hover-btn($blue-h);
+            @include active-btn($blue-a);
+            @include media-btn($blue);
+          }
+        }
+
+        .available {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          color: $green-h;
+
+          svg {
+            color: $green;
+          }
+        }
+
+        .notAvailable {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          color: $red-h;
+
+          svg {
+            color: $red;
+          }
+        }
+
+        .productDescription {
+          width: 220px;
+
+          .makeModel {
+            gap: 5px;
+            color: $gray;
+            font-size: 20px;
+
+            span {
+              color: $gray-h;
+              font-size: 11px;
+            }
+          }
+
+          .productType {
+            margin-top: 5px;
+            font-size: 15px;
+            color: $gray;
+          }
+        }
+
+        .priceContent {
+          display: flex;
+          flex-direction: column;
+
+          .flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+
+            .price {
+              color: $gray;
+              font-size: 22px;
+            }
+
+            .perOne {
+              margin-top: 2px;
+              color: $gray;
+              font-size: 9px;
+
+              span {
+                color: $gray-h;
+              }
+            }
+          }
+
+          .quantity {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 95px;
+
+            button {
+              @include round-btn($gray, $white, 17px, 6px);
+              @include hover-btn($gray-h);
+              @include active-btn($gray-a);
+              @include media-btn($gray);
+            }
+
+            p {
+              color: $gray;
+              font-size: 20px;
+            }
+          }
+        }
+
+        .remove {
+          width: 35px;
+          height: 35px;
+          @include round-btn($red-a, $white-a, 18px, 8px);
+          @include hover-btn($red-h);
+          @include active-btn($red);
+          @include media-btn($red-a);
+        }
+
+        .added {
+          opacity: 0.5;
+          cursor: auto;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+.darkContent {
+  .emptyCart {
+    color: $white-h;
+
+    .goToShop {
+      color: $white;
+
+      a {
+        color: $violet-a;
+
+        &:hover {
+          color: $violet-h;
+        }
+
+        &:active {
+          color: $violet;
+        }
+
+        @media (max-width: 1000px) {
+          &:hover {
+            color: $violet-a;
+          }
+
+          &:active {
+            color: $violet-a;
+          }
+        }
+      }
+    }
+  }
+
+  .flex {
+    .order {
+      @include card($bg-card-d);
+
+      .description {
+        p {
+          color: $white-h;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+
+      .buyButtons {
+        .apple {
+          @include regular-btn($white, $gray-h, 17px, 23px, 13px);
+          @include hover-btn($white-h);
+          @include active-btn($white-a);
+          @include media-btn($white);
+
+          svg {
+            color: $gray;
+          }
+        }
+      }
+
+      .warning {
+        color: $white;
+      }
+
+      .info {
+        p {
+          color: $white;
+
+          svg {
+            color: $white-h;
+          }
+        }
+      }
+    }
+
+    .items {
+      .item {
+        .border {
+          border: 2px solid $white;
+        }
+
+        .available {
+          svg {
+            color: $green-a;
+          }
+        }
+
+        .notAvailable {
+          svg {
+            color: $red-a;
+          }
+        }
+
+        .productDescription {
+          .makeModel {
+            color: $white-h;
+
+            span {
+              color: $white;
+            }
+          }
+
+          .productType {
+            color: $white-h;
+          }
+        }
+
+        .priceContent {
+          .flex {
+            .price {
+              color: $white-h;
+            }
+
+            .perOne {
+              color: $white-h;
+
+              span {
+                color: $white;
+              }
+            }
+          }
+
+          .quantity {
+            button {
+              @include round-btn($white, $gray, 17px, 6px);
+              @include hover-btn($white-h);
+              @include active-btn($white-a);
+              @include media-btn($white);
+            }
+
+            p {
+              color: $white-h;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .content {
+    .flex {
+      flex-wrap: wrap;
+
+      .order {
+        position: relative;
+        top: 0;
+        min-width: 400px;
+        max-width: 400px;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .content {
+    .flex {
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: center;
+
+      .order {
+        min-width: 280px;
+        max-width: 280px;
+
+        .description {
+          p {
+            font-size: 13px;
+          }
+
+          .totalPrice {
+            font-size: 18px;
+          }
+        }
+
+        .warning {
+          font-size: 10px;
+        }
+
+        .info {
+          p {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .items {
+        gap: 80px;
+        margin-right: 0;
+
+        .item {
+          flex-direction: column;
+          text-align: center;
+          gap: 25px;
+
+          .border {
+            width: 250px;
+            height: 580px;
+          }
+
+          .linkImage {
+            img {
+              width: 280px;
+              height: 300px;
+            }
+          }
+
+          .available {
+            justify-content: center;
+          }
+
+          .notAvailable {
+            justify-content: center;
+          }
+
+          .productDescription {
+            width: auto;
+          }
+
+          .priceContent {
+            align-items: center;
+
+            .flex {
+              display: flex;
+              flex-direction: row;
+              align-items: end;
+              gap: 5px;
+
+              .perOne {
+                margin-bottom: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

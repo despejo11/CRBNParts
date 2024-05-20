@@ -4,6 +4,7 @@ import { ThemeContext } from '../../../../../app/providers/ThemeProvider'
 
 import { Link } from 'react-router-dom'
 import { useContext, useRef, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 import { IoMenu, IoClose, IoLogoInstagram } from 'react-icons/io5'
 import { FaFacebookSquare } from 'react-icons/fa'
@@ -18,6 +19,7 @@ export default function Menu() {
 
   const [isOpen, setIsOpen] = useState(false)
 
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
   const menu = useRef(null)
 
   const handleToggle = () => {
@@ -58,6 +60,7 @@ export default function Menu() {
           <Link to='/testimonials'>Testimonials</Link>
           <Link to='/team'>Team</Link>
           <Link to='/contact'>Contact</Link>
+          {isLoggedIn && <Link to='/profile'>Profile</Link>}
         </div>
         <div
           className={`${styles.contact} ${

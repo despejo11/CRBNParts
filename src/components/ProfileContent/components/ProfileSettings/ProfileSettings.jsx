@@ -36,9 +36,9 @@ export default function ProfileSettings() {
   }
 
   const cancelEditing = () => {
-    const storedName = localStorage.getItem('userName') || ''
-    const storedEmail = localStorage.getItem('userEmail') || ''
-    const storedPassword = localStorage.getItem('userPassword') || ''
+    const storedName = localStorage.getItem('UserName') || ''
+    const storedEmail = localStorage.getItem('UserEmail') || ''
+    const storedPassword = localStorage.getItem('UserPassword') || ''
     setValue('name', storedName)
     setValue('email', storedEmail)
     setValue('password', storedPassword)
@@ -57,16 +57,16 @@ export default function ProfileSettings() {
   const onSubmit = (data) => {
     if (!formChanged) {
       setLoading(false)
-      localStorage.setItem('userName', data.name)
-      localStorage.setItem('userPassword', data.password)
+      localStorage.setItem('UserName', data.name)
+      localStorage.setItem('UserPassword', data.password)
       setEditing(false)
       clearErrors()
     } else {
       setLoading(true)
       setTimeout(() => {
         setLoading(false)
-        localStorage.setItem('userName', data.name)
-        localStorage.setItem('userPassword', data.password)
+        localStorage.setItem('UserName', data.name)
+        localStorage.setItem('UserPassword', data.password)
         setEditing(false)
         clearErrors()
         window.location.reload()
@@ -75,9 +75,9 @@ export default function ProfileSettings() {
   }
 
   useEffect(() => {
-    const storedName = localStorage.getItem('userName')
-    const storedEmail = localStorage.getItem('userEmail')
-    const storedPassword = localStorage.getItem('userPassword')
+    const storedName = localStorage.getItem('UserName')
+    const storedEmail = localStorage.getItem('UserEmail')
+    const storedPassword = localStorage.getItem('UserPassword')
 
     if (storedName) setValue('name', storedName)
     if (storedEmail) setValue('email', storedEmail)

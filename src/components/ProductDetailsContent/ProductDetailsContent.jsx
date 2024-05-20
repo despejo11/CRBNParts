@@ -3,10 +3,11 @@ import RecommendedProducts from './components/RecommendedProducts/RecommendedPro
 import Popup from '../Popup/Popup'
 import { Products } from './Products'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
+import { addItem, removeItem } from '../../features/cart/cartSlice'
 
 import { useState, useContext, useRef, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { FaApple, FaCartPlus } from 'react-icons/fa'
 import {
@@ -19,6 +20,9 @@ import { HiOutlinePlusSm, HiOutlineMinusSm } from 'react-icons/hi'
 import { FcGoogle } from 'react-icons/fc'
 import { BsDoorOpen } from 'react-icons/bs'
 
+import { quantum } from 'ldrs'
+quantum.register()
+
 import gsap from 'gsap'
 
 export default function ProductDetailsContent() {
@@ -26,6 +30,7 @@ export default function ProductDetailsContent() {
 
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn)
   const isRegistered = useSelector((state) => state.user.isRegistered)
+  const cartItems = useSelector((state) => state.cart.items)
 
   const { id } = useParams()
   const product = Products.find((p) => p.id === Number(id))
@@ -33,14 +38,19 @@ export default function ProductDetailsContent() {
   const [quantity, setQuantity] = useState(1)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
   const [openPopup, setOpenPopup] = useState()
+  const [isAdded, setIsAdded] = useState(false)
+  const [loadingAdded, setLoadingAdded] = useState(false)
+  const [loadingRemove, setLoadingRemove] = useState(false)
 
   const animImage = useRef()
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     setActiveImageIndex(0)
     setQuantity(1)
-  }, [id])
+    setIsAdded(cartItems.some((item) => item.id === Number(id)))
+  }, [id, cartItems])
 
   const changeImage = (newIndex) => {
     if (newIndex !== activeImageIndex) {
@@ -64,6 +74,44 @@ export default function ProductDetailsContent() {
     product.thirdImage,
     product.fourthImage,
   ]
+
+  const handleAddToCart = () => {
+    if (isLoggedIn) {
+      setLoadingAdded(true)
+
+      setTimeout(() => {
+        setLoadingAdded(false)
+
+        const cartItem = {
+          id: product.id,
+          make: product.make,
+          model: product.model,
+          price: product.price,
+          quantity,
+          image: images[0],
+          alt: product.alt,
+          productType: product.productType,
+          availability: product.availability,
+        }
+
+        dispatch(addItem(cartItem))
+        setIsAdded(true)
+      }, 2000)
+    } else {
+      setOpenPopup(true)
+    }
+  }
+
+  const handleRemoveFromCart = () => {
+    setLoadingRemove(true)
+
+    setTimeout(() => {
+      setLoadingRemove(false)
+
+      dispatch(removeItem({ id: product.id }))
+      setIsAdded(false)
+    }, 2000)
+  }
 
   return (
     <div
@@ -137,45 +185,99 @@ export default function ProductDetailsContent() {
             {product.availability === 'Available' && (
               <>
                 <div className={styles.buttons}>
-                  <div className={styles.quantity}>
-                    <button
-                      onClick={() => quantity > 1 && setQuantity(quantity - 1)}
-                    >
-                      <HiOutlineMinusSm />
-                    </button>
-                    <p>{quantity}</p>
-                    <button
-                      onClick={() => quantity < 10 && setQuantity(quantity + 1)}
-                    >
-                      <HiOutlinePlusSm />
-                    </button>
-                  </div>
+                  {(!isAdded || !isLoggedIn) && !loadingAdded && (
+                    <div className={styles.quantity}>
+                      <button
+                        onClick={() =>
+                          quantity > 1 && setQuantity(quantity - 1)
+                        }
+                        className={quantity === 1 ? styles.added : ''}
+                        disabled={quantity === 1}
+                      >
+                        <HiOutlineMinusSm />
+                      </button>
+                      <p>{quantity}</p>
+                      <button
+                        onClick={() =>
+                          quantity < 10 && setQuantity(quantity + 1)
+                        }
+                        className={quantity >= 10 ? styles.added : ''}
+                        disabled={quantity >= 10}
+                      >
+                        <HiOutlinePlusSm />
+                      </button>
+                    </div>
+                  )}
+
                   <button
-                    onClick={() => {
-                      if (!isLoggedIn) {
-                        setOpenPopup(true)
-                      }
-                    }}
-                    className={styles.addToCart}
+                    onClick={handleAddToCart}
+                    className={`${styles.addToCart} ${
+                      (isAdded && isLoggedIn) || loadingAdded
+                        ? styles.added
+                        : ''
+                    }`}
+                    disabled={(isAdded && isLoggedIn) || loadingAdded}
                   >
-                    <FaCartPlus />
+                    {isAdded && isLoggedIn ? (
+                      <IoCheckmark />
+                    ) : loadingAdded ? (
+                      <l-quantum size='17' speed='1.75' color='#e7e7e7' />
+                    ) : (
+                      <FaCartPlus />
+                    )}
                   </button>
+
+                  {isAdded && isLoggedIn && (
+                    <button
+                      className={`${styles.removeFromCart} ${
+                        loadingRemove ? styles.added : ''
+                      }`}
+                      onClick={handleRemoveFromCart}
+                      disabled={loadingRemove}
+                    >
+                      {loadingRemove ? (
+                        <l-quantum size='13' speed='1.75' color='#e7e7e7' />
+                      ) : (
+                        <IoClose />
+                      )}
+                    </button>
+                  )}
                 </div>
-                <p className={styles.totalPrice}>
-                  Total price: <span>€ {product.price * quantity}</span>
-                </p>
-                <div className={styles.buyButtons}>
-                  <button className={styles.google}>
-                    Buy with
-                    <FcGoogle />
-                    Pay
-                  </button>
-                  <button className={styles.apple}>
-                    Buy with
-                    <FaApple />
-                    Pay
-                  </button>
-                </div>
+
+                {(!isAdded || !isLoggedIn) &&
+                  (!loadingAdded || !isLoggedIn) && (
+                    <>
+                      <p className={styles.totalPrice}>
+                        Total price: <span>€ {product.price * quantity}</span>
+                      </p>
+                      <div className={styles.buyButtons}>
+                        <button
+                          onClick={() => {
+                            if (!isLoggedIn) {
+                              setOpenPopup(true)
+                            }
+                          }}
+                          className={styles.google}
+                        >
+                          Buy with
+                          <FcGoogle />
+                          Pay
+                        </button>
+                        <button
+                          onClick={() => {
+                            if (!isLoggedIn) {
+                              setOpenPopup(true)
+                            }
+                          }}
+                          className={styles.apple}
+                        >
+                          Buy with
+                          <FaApple />
+                          Pay
+                        </button>
+                      </div>
+                    </>
+                  )}
               </>
             )}
 
@@ -210,7 +312,9 @@ export default function ProductDetailsContent() {
             <p className={styles.description}>{product.installation}</p>
           </div>
         </div>
+
         <RecommendedProducts />
+
         {openPopup && (
           <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
             <div className={styles.popupContent}>

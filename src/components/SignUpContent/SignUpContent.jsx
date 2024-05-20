@@ -1,5 +1,6 @@
 import styles from './SignUpContent.module.scss'
 import useLocalStorage from '../../../app/hooks/useLocalStorage'
+import ThemeToggle from '../../../app/theme/ThemeToggle'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 import { register as registerUser } from '../../features/user/userSlice'
 
@@ -24,9 +25,9 @@ export default function SignUpContent() {
 
   const [showPassword, setShowPassword] = useState()
   const [loading, setLoading] = useState(false)
-  const [name, setName] = useLocalStorage('userName', '')
-  const [email, setEmail] = useLocalStorage('userEmail', '')
-  const [password, setPassword] = useLocalStorage('userPassword', '')
+  const [name, setName] = useLocalStorage('UserName', '')
+  const [email, setEmail] = useLocalStorage('UserEmail', '')
+  const [password, setPassword] = useLocalStorage('UserPassword', '')
 
   const {
     register,
@@ -193,6 +194,11 @@ export default function SignUpContent() {
             Already have an account? <Link to='/signin'>Sign in</Link>
           </p>
         </div>
+      </div>
+
+      <div className={styles.info}>
+        <ThemeToggle />
+        <p>© 2024 CRBNParts, all rights reserved.</p>
       </div>
     </div>
   )

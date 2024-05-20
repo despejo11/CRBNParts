@@ -122,7 +122,7 @@ export default function FilterProducts({
     setMaxPrice('')
     setFilterMessage('')
     setFilteredProducts(products)
-    setSelectedProductCount(0)
+    setSelectedProductCount(products.length)
   }
 
   return (

@@ -28,6 +28,7 @@ export default function SignUpContent() {
   const [name, setName] = useLocalStorage('UserName', '')
   const [email, setEmail] = useLocalStorage('UserEmail', '')
   const [password, setPassword] = useLocalStorage('UserPassword', '')
+  const [date, setDate] = useLocalStorage('RegistrationDate', '')
 
   const {
     register,
@@ -39,7 +40,11 @@ export default function SignUpContent() {
   })
 
   const onSubmit = (data) => {
+    const currentDate = new Date().toLocaleString()
+
     setLoading(true)
+    setDate(currentDate)
+
     setTimeout(() => {
       setLoading(false)
       dispatch(registerUser(data))

@@ -133,6 +133,18 @@
       }
     }
   }
+
+  .registrationDate {
+    margin-top: 50px;
+    color: $gray;
+    text-align: center;
+    font-size: 14px;
+    text-wrap: balance;
+
+    span {
+      color: $blue;
+    }
+  }
 }
 
 .darkContent {
@@ -173,16 +185,24 @@
       }
     }
   }
+
+  .registrationDate {
+    color: $white-h;
+
+    span {
+      color: $blue-a;
+    }
+  }
 }
 
 @media (max-width: 600px) {
   .content {
     .title {
-      font-size: 35px;
+      font-size: 27px;
     }
 
     .titled {
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .flex {

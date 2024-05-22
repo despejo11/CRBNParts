@@ -1,0 +1,94 @@
+@import '/index.scss';
+
+.content {
+  margin-top: 100px;
+  text-align: center;
+  text-wrap: balance;
+
+  .title {
+    font-size: 18px;
+    color: $gray;
+    font-size: 18px;
+  }
+
+  .titled {
+    margin-top: 20px;
+    font-size: 14px;
+    color: $gray-h;
+
+    a {
+      color: $violet;
+      cursor: pointer;
+      transition: $tr-btn;
+      text-decoration: none;
+
+      &:hover {
+        color: $violet-h;
+      }
+
+      &:active {
+        color: $violet-a;
+      }
+
+      @media (max-width: 1000px) {
+        &:hover {
+          color: $violet;
+        }
+
+        &:active {
+          color: $violet;
+        }
+      }
+    }
+  }
+
+  .orderId {
+    margin-top: 10px;
+    font-size: 12px;
+    color: $gray-h;
+
+    span {
+      color: $gray-a;
+    }
+  }
+}
+
+.darkContent {
+  .title {
+    color: $white-h;
+  }
+
+  .titled {
+    color: $white;
+
+    a {
+      color: $violet-a;
+
+      &:hover {
+        color: $violet-h;
+      }
+
+      &:active {
+        color: $violet;
+      }
+
+      @media (max-width: 1000px) {
+        &:hover {
+          color: $violet-a;
+        }
+
+        &:active {
+          color: $violet-a;
+        }
+      }
+    }
+  }
+
+  .orderId {
+    color: $white;
+
+    span {
+      color: $white-h-alt;
+    }
+  }
+}

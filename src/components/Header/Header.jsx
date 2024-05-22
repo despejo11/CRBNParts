@@ -63,7 +63,9 @@ export default function Header() {
             )}
             {isLoggedIn && (
               <Link to='/cart' className={styles.cart}>
-                <span>{uniqueProductsInCart}</span>
+                {uniqueProductsInCart !== 0 && (
+                  <span>{uniqueProductsInCart}</span>
+                )}
                 <FaShoppingCart />
               </Link>
             )}

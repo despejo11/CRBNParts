@@ -6,6 +6,7 @@ export default function NewPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    document.documentElement.style.overflow = 'auto'
   }, [pathname])
 
   return null

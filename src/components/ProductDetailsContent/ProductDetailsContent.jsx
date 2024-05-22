@@ -46,6 +46,8 @@ export default function ProductDetailsContent() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
+  const totalPrice = product.price * quantity
+
   useEffect(() => {
     setActiveImageIndex(0)
     setQuantity(1)
@@ -180,7 +182,16 @@ export default function ProductDetailsContent() {
                 <IoClose /> Not available
               </p>
             )}
-            <p className={styles.price}>€ {product.price}</p>
+            <div className={styles.prices}>
+              <p className={styles.price}>
+                € {!loadingAdded ? totalPrice : product.price}
+              </p>
+              {quantity >= 2 && !loadingAdded && (
+                <p className={styles.perOne}>
+                  Per one: <span>€ {product.price}</span>
+                </p>
+              )}
+            </div>
 
             {product.availability === 'Available' && (
               <>
@@ -243,41 +254,6 @@ export default function ProductDetailsContent() {
                     </button>
                   )}
                 </div>
-
-                {(!isAdded || !isLoggedIn) &&
-                  (!loadingAdded || !isLoggedIn) && (
-                    <>
-                      <p className={styles.totalPrice}>
-                        Total price: <span>€ {product.price * quantity}</span>
-                      </p>
-                      <div className={styles.buyButtons}>
-                        <button
-                          onClick={() => {
-                            if (!isLoggedIn) {
-                              setOpenPopup(true)
-                            }
-                          }}
-                          className={styles.google}
-                        >
-                          Buy with
-                          <FcGoogle />
-                          Pay
-                        </button>
-                        <button
-                          onClick={() => {
-                            if (!isLoggedIn) {
-                              setOpenPopup(true)
-                            }
-                          }}
-                          className={styles.apple}
-                        >
-                          Buy with
-                          <FaApple />
-                          Pay
-                        </button>
-                      </div>
-                    </>
-                  )}
               </>
             )}
 

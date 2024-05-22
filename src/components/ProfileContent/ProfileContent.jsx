@@ -1,4 +1,5 @@
 import styles from './ProfileContent.module.scss'
+import SubscribeLink from '../SubscribeLink/SubscribeLink'
 import ProfileSettings from './components/ProfileSettings/ProfileSettings'
 import OrderHistory from './components/OrderHistory/OrderHistory'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
@@ -30,6 +31,16 @@ export default function ProfileContent() {
         theme === 'dark' ? styles.darkContent : ''
       }`}
     >
+      <div className='container'>
+        <p className={styles.title}>Your profile</p>
+        <p className={styles.titled}>
+          Here you can edit your personal data, you can also review all your
+          orders.
+        </p>
+      </div>
+
+      <SubscribeLink />
+
       <div className='container'>
         <div className={styles.buttons}>
           <button

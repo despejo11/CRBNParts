@@ -1,0 +1,173 @@
+@import '/index.scss';
+
+.content {
+  .text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+
+    .title {
+      font-size: 35px;
+      color: $gray;
+    }
+
+    .titled {
+      font-size: 15px;
+      color: $gray-h;
+      text-wrap: balance;
+      margin-top: 10px;
+    }
+
+    .paymentMethod {
+      font-size: 17px;
+      color: $gray;
+      text-wrap: balance;
+      margin-top: 10px;
+    }
+
+    .total {
+      p {
+        font-size: 13px;
+        color: $gray-h;
+
+        span {
+          font-size: 16px;
+          color: $gray;
+        }
+      }
+    }
+  }
+
+  .warning {
+    margin-top: 60px;
+    font-size: 11px;
+    color: $gray;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  form {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    .input {
+      position: relative;
+
+      input {
+        width: 200px;
+        @include input(
+          $white-h,
+          $gray,
+          $white,
+          17px,
+          20px,
+          10px,
+          $gray,
+          #9f9f9f,
+          $white
+        );
+      }
+
+      .loadingInput {
+        @extend %submit-successful-input;
+      }
+
+      .error {
+        margin-top: 5px;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        color: $red-a;
+        gap: 4px;
+        font-size: 14px;
+
+        svg {
+          font-size: 20px;
+          color: $red;
+        }
+      }
+
+      .toggle {
+        position: absolute;
+        right: 10px;
+        top: 9.5px;
+        @include round-btn($violet, $white-a, 16px, 5px);
+        @include hover-btn($violet-h);
+        @include active-btn($violet-a);
+        @include media-btn($violet);
+      }
+    }
+
+    .submit {
+      width: 200px;
+      height: 40px;
+      @include regular-btn($blue, $white-a, 17px, 20px, 10px);
+      @include hover-btn($blue-h);
+      @include active-btn($blue-a);
+      @include media-btn($blue);
+    }
+
+    .loadingButton {
+      @extend %submit-successful-btn;
+    }
+  }
+}
+
+.darkContent {
+  .text {
+    .title {
+      color: $white-h;
+    }
+
+    .titled {
+      color: $white;
+    }
+
+    .paymentMethod {
+      color: $white-h;
+    }
+
+    .total {
+      p {
+        color: $white;
+
+        span {
+          color: $white-h;
+        }
+      }
+    }
+  }
+
+  .warning {
+    color: $white-h;
+  }
+
+  form {
+    .input {
+      input {
+        @include input(
+          $white-h-alt,
+          $gray,
+          $white-a-alt,
+          17px,
+          20px,
+          10px,
+          $white-h,
+          #828282,
+          $gray
+        );
+      }
+
+      .error {
+        svg {
+          color: $red-h;
+        }
+      }
+    }
+  }
+}

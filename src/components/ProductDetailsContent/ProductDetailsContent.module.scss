@@ -118,10 +118,26 @@
         @include availability($red-h, $red);
       }
 
-      .price {
+      .prices {
         margin-top: 20px;
-        color: $gray;
-        font-size: 22px;
+        display: flex;
+        align-items: end;
+        gap: 7px;
+
+        .price {
+          color: $gray;
+          font-size: 22px;
+        }
+
+        .perOne {
+          color: $gray;
+          font-size: 13px;
+          margin-bottom: 2px;
+
+          span {
+            color: $gray-h;
+          }
+        }
       }
 
       .buttons {
@@ -170,54 +186,6 @@
           @include hover-btn($red-h);
           @include active-btn($red);
           @include media-btn($red-a);
-        }
-      }
-
-      .totalPrice {
-        color: $gray;
-        margin-top: 20px;
-        font-size: 20px;
-
-        span {
-          color: $gray-h;
-        }
-      }
-
-      .buyButtons {
-        margin-top: 30px;
-        display: flex;
-        gap: 20px;
-        align-items: center;
-
-        button {
-          display: flex;
-          justify-content: center;
-
-          svg {
-            margin-inline: 5px;
-          }
-        }
-
-        .google {
-          @include regular-btn($blue, $white-a, 17px, 23px, 13px);
-          @include hover-btn($blue-h);
-          @include active-btn($blue-a);
-          @include media-btn($blue);
-
-          svg {
-            color: $white;
-          }
-        }
-
-        .apple {
-          @include regular-btn($gray, $white, 17px, 23px, 13px);
-          @include hover-btn($gray-h);
-          @include active-btn($gray-a);
-          @include media-btn($gray);
-
-          svg {
-            color: $white-a;
-          }
         }
       }
 
@@ -300,8 +268,18 @@
         @include availability($red-h, $red-a);
       }
 
-      .price {
-        color: $white-h;
+      .prices {
+        .price {
+          color: $white-h;
+        }
+
+        .perOne {
+          color: $white-h;
+
+          span {
+            color: $white;
+          }
+        }
       }
 
       .buttons {
@@ -315,27 +293,6 @@
 
           p {
             color: $white-h;
-          }
-        }
-      }
-
-      .totalPrice {
-        color: $white-h;
-
-        span {
-          color: $white;
-        }
-      }
-
-      .buyButtons {
-        .apple {
-          @include regular-btn($white, $gray-h, 17px, 23px, 13px);
-          @include hover-btn($white-h);
-          @include active-btn($white-a);
-          @include media-btn($white);
-
-          svg {
-            color: $gray;
           }
         }
       }

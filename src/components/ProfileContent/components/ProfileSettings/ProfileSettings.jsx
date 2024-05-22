@@ -21,6 +21,8 @@ export default function ProfileSettings() {
   const [loading, setLoading] = useState(false)
   const [formChanged, setFormChanged] = useState(false)
 
+  const RegistrationDate = localStorage.getItem('RegistrationDate')
+
   const {
     register,
     handleSubmit,
@@ -233,6 +235,13 @@ export default function ProfileSettings() {
           </div>
         </form>
       </div>
+
+      {RegistrationDate && (
+        <p className={styles.registrationDate}>
+          Registration date: <span>{RegistrationDate}</span>
+        </p>
+      )}
+
       <LogoutButton />
     </div>
   )

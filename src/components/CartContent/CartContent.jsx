@@ -1,4 +1,6 @@
 import styles from './CartContent.module.scss'
+import Popup from '../Popup/Popup'
+import OrderData from './components/Order/Order'
 import { removeItem, updateItemQuantity } from '../../features/cart/cartSlice'
 import { ThemeContext } from '../../../app/providers/ThemeProvider'
 
@@ -22,6 +24,8 @@ export default function CartContent() {
   const dispatch = useDispatch()
 
   const [loadingRemove, setLoadingRemove] = useState(false)
+  const [openPopup, setOpenPopup] = useState(false)
+  const [paymentMethod, setPaymentMethod] = useState('')
 
   const handleRemoveItem = (itemId) => {
     setLoadingRemove((prevState) => ({
@@ -37,6 +41,11 @@ export default function CartContent() {
         return newState
       })
     }, 1000)
+  }
+
+  const handleOpenPopup = (method) => {
+    setPaymentMethod(method)
+    setOpenPopup(true)
   }
 
   return (
@@ -58,7 +67,7 @@ export default function CartContent() {
             <div className={styles.order}>
               <div className={styles.description}>
                 <p>
-                  Total Quantity: <span>{cart.totalQuantity}</span>
+                  Total quantity: <span>{cart.totalQuantity}</span>
                 </p>
                 <p>
                   Delivery: <span>Free</span>
@@ -69,10 +78,16 @@ export default function CartContent() {
               </div>
 
               <div className={styles.buyButtons}>
-                <button className={styles.google}>
+                <button
+                  className={styles.google}
+                  onClick={() => handleOpenPopup('Google Pay')}
+                >
                   Buy with <FcGoogle /> Pay
                 </button>
-                <button className={styles.apple}>
+                <button
+                  className={styles.apple}
+                  onClick={() => handleOpenPopup('Apple Pay')}
+                >
                   Buy with <FaApple /> Pay
                 </button>
               </div>
@@ -184,6 +199,12 @@ export default function CartContent() {
               ))}
             </div>
           </div>
+        )}
+
+        {openPopup && (
+          <Popup openPopup={openPopup} setOpenPopup={setOpenPopup}>
+            <OrderData paymentMethod={paymentMethod} />
+          </Popup>
         )}
       </div>
     </div>

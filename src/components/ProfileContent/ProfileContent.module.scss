@@ -3,7 +3,19 @@
 .content {
   margin-top: 100px;
 
+  .title {
+    @extend %title;
+    text-align: center;
+  }
+
+  .titled {
+    @extend %description;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
   .buttons {
+    margin-top: 150px;
     margin-bottom: 100px;
     display: flex;
     flex-wrap: wrap;
@@ -48,6 +60,14 @@
 }
 
 .darkContent {
+  .title {
+    color: $white-h;
+  }
+
+  .titled {
+    color: $white;
+  }
+
   .buttons {
     button {
       @include regular-btn(transparent, $blue-a, 17px, 15px, 5px);
@@ -70,5 +90,17 @@
 
   .warning {
     color: $white-h;
+  }
+}
+
+@media (max-width: 700px) {
+  .content {
+    .title {
+      font-size: 10vw;
+    }
+
+    .titled {
+      font-size: 15px;
+    }
   }
 }

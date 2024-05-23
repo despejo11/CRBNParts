@@ -86,11 +86,13 @@ export default function MostPopular() {
               {activeButton === 'Ferrari' ? (
                 <div className={styles.selected__content}>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image1br}
-                      src='/images/cars/Ferrari812Superfast.png'
-                      alt='Ferrari 812 Superfast'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image1br}
+                        src='/images/cars/Ferrari812Superfast.png'
+                        alt='Ferrari 812 Superfast'
+                      />
+                    </Link>
                     <p>
                       Ferrari{' '}
                       <span className={styles.model}>812 Superfast</span>
@@ -100,11 +102,13 @@ export default function MostPopular() {
                     </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image2br}
-                      src='/images/cars/FerrariSF90Stradale.png'
-                      alt='Ferrari SF90 Stradale'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image2br}
+                        src='/images/cars/FerrariSF90Stradale.png'
+                        alt='Ferrari SF90 Stradale'
+                      />
+                    </Link>
                     <p>
                       Ferrari{' '}
                       <span className={styles.model}>SF90 Stradale</span>
@@ -114,11 +118,13 @@ export default function MostPopular() {
                     </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image3br}
-                      src='/images/cars/Ferrari488Pista.png'
-                      alt='Ferrari 488 Pista'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image3br}
+                        src='/images/cars/Ferrari488Pista.png'
+                        alt='Ferrari 488 Pista'
+                      />
+                    </Link>
                     <p>
                       Ferrari <span className={styles.model}>488 Pista</span>
                     </p>
@@ -131,11 +137,13 @@ export default function MostPopular() {
               {activeButton === 'Porsche' ? (
                 <div className={styles.selected__content}>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image1br}
-                      src='/images/cars/Porsche911GT3RS.png'
-                      alt='Porsche 911 GT3 RS'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image1br}
+                        src='/images/cars/Porsche911GT3RS.png'
+                        alt='Porsche 911 GT3 RS'
+                      />
+                    </Link>
                     <p>
                       Porsche <span className={styles.model}>911 GT3 RS</span>
                     </p>
@@ -144,11 +152,13 @@ export default function MostPopular() {
                     </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image2br}
-                      src='/images/cars/PorscheTaycanTurboS.png'
-                      alt='Porsche Taycan Turbo S'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image2br}
+                        src='/images/cars/PorscheTaycanTurboS.png'
+                        alt='Porsche Taycan Turbo S'
+                      />
+                    </Link>
                     <p>
                       Porsche{' '}
                       <span className={styles.model}>Taycan Turbo S</span>
@@ -158,11 +168,13 @@ export default function MostPopular() {
                     </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image3br}
-                      src='/images/cars/Porsche911TurboS.png'
-                      alt='Porsche 911 Turbo S'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image3br}
+                        src='/images/cars/Porsche911TurboS.png'
+                        alt='Porsche 911 Turbo S'
+                      />
+                    </Link>
                     <p>
                       Porsche <span className={styles.model}>911 Turbo S</span>
                     </p>
@@ -175,11 +187,13 @@ export default function MostPopular() {
               {activeButton === 'Lamborghini' ? (
                 <div className={styles.selected__content}>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image2br}
-                      src='/images/cars/LamborghiniAventadorSVJ.png'
-                      alt='Lamborghini Aventador SVJ'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image2br}
+                        src='/images/cars/LamborghiniAventadorSVJ.png'
+                        alt='Lamborghini Aventador SVJ'
+                      />
+                    </Link>
                     <p>
                       Lamborghini{' '}
                       <span className={styles.model}>Aventador SVJ</span>
@@ -189,11 +203,13 @@ export default function MostPopular() {
                     </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image1br}
-                      src='/images/cars/LamborghiniUrus.png'
-                      alt='Lamborghini Urus'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image1br}
+                        src='/images/cars/LamborghiniUrus.png'
+                        alt='Lamborghini Urus'
+                      />
+                    </Link>
                     <p>
                       Lamborghini <span className={styles.model}>Urus</span>
                     </p>
@@ -202,11 +218,13 @@ export default function MostPopular() {
                     </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image3br}
-                      src='/images/cars/LamborghiniHuracanSTO.png'
-                      alt='Lamborghini Huracan STO'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image3br}
+                        src='/images/cars/LamborghiniHuracanSTO.png'
+                        alt='Lamborghini Huracan STO'
+                      />
+                    </Link>
                     <p>
                       Lamborghini{' '}
                       <span className={styles.model}>Huracan STO</span>
@@ -220,11 +238,13 @@ export default function MostPopular() {
               {activeButton === 'Other' ? (
                 <div className={styles.selected__content}>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image1br}
-                      src='/images/cars/McLaren765LT.png'
-                      alt='McLaren 765LT'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image1br}
+                        src='/images/cars/McLaren765LT.png'
+                        alt='McLaren 765LT'
+                      />
+                    </Link>
                     <p>
                       McLaren <span className={styles.model}>765LT</span>
                     </p>
@@ -233,11 +253,13 @@ export default function MostPopular() {
                     </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image2br}
-                      src='/images/cars/MercedesBenzE63S.png'
-                      alt='Mercedes-Benz E63 S'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image2br}
+                        src='/images/cars/MercedesBenzE63S.png'
+                        alt='Mercedes-Benz E63 S'
+                      />
+                    </Link>
                     <p>
                       Mercedes-Benz{' '}
                       <span className={styles.model}>E63S AMG</span>
@@ -247,11 +269,13 @@ export default function MostPopular() {
                     </Link>
                   </div>
                   <div className={theme === 'dark' ? styles.dark : ''}>
-                    <img
-                      className={styles.image3br}
-                      src='/images/cars/BMWM8Competition.png'
-                      alt='BMW M8 Competition'
-                    />
+                    <Link to='/shop'>
+                      <img
+                        className={styles.image3br}
+                        src='/images/cars/BMWM8Competition.png'
+                        alt='BMW M8 Competition'
+                      />
+                    </Link>
                     <p>
                       BMW <span className={styles.model}>M8 Competition</span>
                     </p>

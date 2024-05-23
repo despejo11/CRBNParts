@@ -167,7 +167,7 @@ export default function ProfileSettings() {
                 },
                 minLength: {
                   value: 8,
-                  message: 'Max length 8',
+                  message: 'Min length 8',
                 },
                 maxLength: {
                   value: 16,

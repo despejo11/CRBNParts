@@ -106,9 +106,29 @@
 
       img {
         width: 245px;
-        object-fit: cover;
         height: 245px;
+        object-fit: cover;
         box-shadow: $b-sh;
+        transition: $tr-btn;
+        cursor: pointer;
+
+        &:hover {
+          filter: brightness(80%);
+        }
+
+        &:active {
+          filter: brightness(60%);
+        }
+
+        @media (max-width: 1000px) {
+          &:hover {
+            filter: brightness(100%);
+          }
+
+          &:active {
+            filter: brightness(100%);
+          }
+        }
       }
 
       .image1br {

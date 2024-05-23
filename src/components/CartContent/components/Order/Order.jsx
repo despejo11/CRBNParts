@@ -157,9 +157,13 @@ export default function Order({ paymentMethod }) {
                 value: /^\d{10}$/,
                 message: 'Invalid',
               },
+              minLength: {
+                value: 10,
+                message: 'Length 10',
+              },
               maxLength: {
                 value: 10,
-                message: 'Max length 10',
+                message: 'Length 10',
               },
             })}
             disabled={loadingData}
@@ -181,7 +185,7 @@ export default function Order({ paymentMethod }) {
             {...register('address', {
               required: 'Required',
               pattern: {
-                value: /^[A-Za-z0-9\s]*$/,
+                value: /^[A-Za-z0-9\s,]*$/,
                 message: 'Invalid',
               },
               minLength: {

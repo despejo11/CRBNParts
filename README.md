@@ -1,8 +1,21 @@
-# React + Vite
+# CRBNParts
+Online store that specializes in selling carbon parts for cars.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technology
+- [React](https://react.dev/)
+- [Yarn](https://www.npmjs.com/package/yarn)
+- [Vite](https://vitejs.dev/)
+- [Ssas](https://sass-lang.com/)
+- [Redux](https://redux.js.org/)
+- [GSAP](https://gsap.com/)
+- [LDRS](https://uiball.com/ldrs/)
+- [React Router Dom](https://reactrouter.com/en/main)
+- [React Hook Form](https://react-hook-form.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [React Scroll](https://www.npmjs.com/package/react-scroll)
 
-Currently, two official plugins are available:
+### Notes
+The design was done by me.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Why I developed this project?
+For experience and new knowledge.
